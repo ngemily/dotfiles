@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/cygdrive/c/users/emily/desktop/penyopal/PenyoPal/app/subgames/foodfrenzy'
+let g:netrw_dirhist_2='/var/log/xwin'
+let g:netrw_dirhist_3='/home/Emily/dotfiles/.git/info'
