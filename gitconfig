@@ -1,0 +1,15 @@
+[user]
+  name = Emily Ng
+  email = ngemily2@gmail.com
+[http]
+  postBuffer = 524288000
+[alias]
+  logg = log --graph
+  lol = log --graph --pretty=oneline --abbrev-commit
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[interactive]
+  singlekey = true
