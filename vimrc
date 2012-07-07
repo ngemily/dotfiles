@@ -54,6 +54,7 @@ nnoremap <leader>u viwUe
 nnoremap / /\v
 nnoremap <silent> <leader>/ :let @/=""<CR>
 nnoremap <F3> :ls!<CR>
+nnoremap <leader>w :w<CR>
 " Tlist
 nnoremap <C-t><C-r> :TlistOpen<CR>
 nnoremap <leader>r :highlight TagListFileName ctermg=none<CR>
