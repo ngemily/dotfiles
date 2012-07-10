@@ -39,8 +39,7 @@ iab moaidev ../moai-dev/vs2010/bin/win32/release/moai-untz
 
 " Key Mappings "
 " [ General ]
-nnoremap <F2> :set background=light<CR>
-nnoremap <F2><F2> :set background=dark<CR>
+nnoremap <F11> :Invbg<CR>
 inoremap jk <ESC>
 vnoremap kl <ESC>
 nnoremap H 0w
@@ -56,9 +55,9 @@ nnoremap <silent> <leader>/ :let @/=""<CR>
 nnoremap <F3> :ls!<CR>
 nnoremap <leader>w :w<CR>
 " Tlist
-nnoremap <C-t><C-r> :TlistOpen<CR>
-nnoremap <leader>r :highlight TagListFileName ctermg=none<CR>
-nnoremap <C-t> :TlistToggle<CR>
+nnoremap <C-t><C-r> :TlistOpen<CR><C-c>
+nnoremap <C-t> :TlistClose<CR>
+nnoremap <F2> :TToggle<CR><C-c>
 nnoremap <F5> :echo Tlist_Get_Tagname_By_Line()<CR>
 " NERDTree
 nnoremap <C-n><C-b> :NERDTreeClose<CR>:NERDTreeToggle<CR>
@@ -102,3 +101,27 @@ augroup abbrev
   autocmd FileType lua :iabbrev <buffer> fori for i in ipairs () do end<left><left><left><left><left><left><left><left>
   autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end<left><left><left><left><left><left><left><left>
 augroup END
+
+highlight MyTagListFileName ctermbg=red
+
+function! ReverseBackground()
+  if &background=="dark"
+    set background=light
+    highlight MyTagListFileName ctermbg=none
+    highlight MyTagListFileName ctermfg=magenta
+  else
+    set background=dark
+    highlight MyTagListFileName ctermbg=red
+  endif
+endfunction
+command! Invbg call ReverseBackground()
+
+function! TaglistToggle()
+  let winnum = bufwinnr(g:TagList_title)
+  if winnum != -1
+    TlistClose
+  else
+    TlistOpen
+  endif
+endfunction
+command! TToggle call TaglistToggle()
