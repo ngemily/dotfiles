@@ -1,1 +1,3 @@
-vim/doc/tags
+vim/doc/*.*
+vim/.netrwhist
+vim/bundle/*/.netrwhist
