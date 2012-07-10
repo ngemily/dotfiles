@@ -13,3 +13,5 @@
   status = auto
 [interactive]
   singlekey = true
+[core]
+	excludesfile = ~/.cvsignore
