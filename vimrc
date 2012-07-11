@@ -43,7 +43,7 @@ iab moaidev ../moai-dev/vs2010/bin/win32/release/moai-untz
 
 " Key Mappings "
 " [ General ]
-nnoremap <F11> :Invbg<CR>
+nnoremap <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 inoremap jk <ESC>
 vnoremap kl <ESC>
 nnoremap H 0w
@@ -108,26 +108,18 @@ augroup abbrev
   autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end<left><left><left><left><left><left><left><left>
 augroup END
 
-highlight MyTagListFileName ctermbg=red
-
-function! ReverseBackground()
-  if &background=="dark"
-    set background=light
-    highlight MyTagListFileName ctermbg=none
-    highlight MyTagListFileName ctermfg=magenta
-  else
-    set background=dark
-    highlight MyTagListFileName ctermbg=red
-  endif
-endfunction
-command! Invbg call ReverseBackground()
-
 function! TaglistToggle()
   let winnum = bufwinnr(g:TagList_title)
   if winnum != -1
     TlistClose
   else
     TlistOpen
+    if &background=="light"
+      highlight MyTagListFileName ctermbg=none
+      highlight MyTagListFileName ctermfg=magenta
+    else
+      highlight MyTagListFileName ctermbg=red
+    endif
   endif
 endfunction
 command! TToggle call TaglistToggle()
