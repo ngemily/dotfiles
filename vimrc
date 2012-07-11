@@ -11,7 +11,7 @@ let $MANPAGER=''
 
 " Display "
 colorscheme solarized
-if strftime("%H") < 20 && strftime("%H") > 7
+if strftime("%H") < 17 && strftime("%H") > 7
   set background=light
 else
   set background=dark
