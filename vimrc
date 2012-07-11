@@ -63,6 +63,8 @@ nnoremap <F5> :echo Tlist_Get_Tagname_By_Line()<CR>
 nnoremap <C-n><C-b> :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nnoremap <C-n><C-n> :NERDTreeClose<CR>:NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeClose<CR>
+" Gundo
+nnoremap <leader>g :GundoToggle<CR><C-c>
 " window nav
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
