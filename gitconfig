@@ -16,3 +16,5 @@
 [core]
 	excludesfile = ~/.cvsignore
 	editor = vim
+[credential]
+	helper = osxkeychain
