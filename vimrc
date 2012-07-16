@@ -87,6 +87,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " [ Operator pending ]
 onoremap <silent> in( :<C-u>normal! f(vi(<cr>
+onoremap <silent> in{ :<C-u>normal! f{vi{<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 
