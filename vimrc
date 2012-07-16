@@ -69,6 +69,9 @@ nnoremap <C-n><C-n> :NERDTreeClose<CR>:NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeClose<CR>
 " Gundo
 nnoremap <leader>g :GundoToggle<CR><C-c>
+" Fugitive
+nnoremap <leader>G :Gstatus<CR>
+nnoremap <leader>D :Gdiff<CR>
 " window nav
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
