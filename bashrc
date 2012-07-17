@@ -208,7 +208,6 @@ alias down='cd d:/downloads/'
 # Schtuff
 alias mint='mintty & exit'
 alias rxvt='c:/cygwin/bin/urxvt-X.exe'
-alias open='cygstart .'
 alias ls='ls -aG'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 
