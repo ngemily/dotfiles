@@ -43,7 +43,7 @@ iab moaidev ../moai-dev/vs2010/bin/win32/release/moai-untz
 
 " Key Mappings "
 " [ General ]
-nnoremap <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 inoremap jk <ESC>
 vnoremap kl <ESC>
 nnoremap H 0w
