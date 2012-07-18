@@ -33,5 +33,36 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/cygdrive/c/Android/android-sdk/platform-tools:/etc/apache-ant-1.8.3/bin:/cygdrive/c/Android/android-ndk-r8/:/Users/ngemily/.rvm/bin
+# Export
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
+
+# Aliases
+alias ls='ls -aG'
+alias less='/usr/share/vim/vim73/macros/less.sh'
+
+# GIT
+alias g='git'
+alias gst='git status --short'
+alias gchd='git checkout dev'
+alias gch='git checkout'
+alias gcm='git commit -m'
+alias gpd='git push origin dev'
+alias gld='git pull origin dev'
+alias gpo='git push origin'
+alias glo='git pull origin'
+alias gb='git branch'
+alias ga='git add'
+alias gd='git diff'
+alias gap='git add -p'
+alias gd='git diff'
+
+alias gpsh='git push origin'
+alias gpl='git pull origin'
+
+alias gsh='git stash'
+alias gsha='git stash apply'
+
+alias ribbon='tag --force _ribbon origin/master'
+alias catchup='log --patch --reverse --topo-order _ribbon..origin/master'
+
