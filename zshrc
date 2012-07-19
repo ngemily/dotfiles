@@ -66,6 +66,3 @@ alias gpl='git pull origin'
 alias gsh='git stash'
 alias gsha='git stash apply'
 
-alias ribbon='tag --force _ribbon origin/master'
-alias catchup='log --patch --reverse --topo-order _ribbon..origin/master'
-
