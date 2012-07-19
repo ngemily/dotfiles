@@ -6,6 +6,8 @@
 [alias]
   logg = log --graph
   lol = log --graph --pretty=oneline --abbrev-commit
+  ribbon="tag --force _ribbon remotes/origin/master"
+  catchup="log --patch --reverse --topo-order _ribbon..remotes/origin/master"
 [color]
   branch = auto
   diff = auto
