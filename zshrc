@@ -41,6 +41,9 @@ export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nom
 alias ls='ls -aG'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 
+alias vim='mvim -v'
+alias gvim='mvim'
+
 # GIT
 alias g='git'
 alias gst='git status --short'
