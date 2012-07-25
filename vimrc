@@ -58,10 +58,12 @@ nnoremap / /\v
 nnoremap <silent> <leader>/ :let @/=""<CR>
 nnoremap <F3> :ls!<CR>
 nnoremap <leader>w :w<CR>
+nnoremap cF cwtrue<ESC>
+nnoremap cT cwfalse<ESC>
 " Tlist
 nnoremap <C-t><C-r> :TlistOpen<CR><C-c>
 nnoremap <C-t> :TlistClose<CR>
-nnoremap <F2> :TToggle<CR><C-c>
+nnoremap <leader>T :TToggle<CR><C-c>
 nnoremap <F5> :echo Tlist_Get_Tagname_By_Line()<CR>
 " NERDTree
 nnoremap <silent> <C-n><C-b> :NERDTreeClose<CR>:NERDTreeToggle<CR>
@@ -101,7 +103,7 @@ augroup END
 augroup comment_line
   autocmd!
   autocmd FileType lua nnoremap <buffer> <localleader>c I--<ESC>
-  autocmd FileType lua nnoremap <buffer> <localleader>C I<ESC>xx
+  autocmd FileType lua nnoremap <buffer> <localleader>C 0wxx
 augroup END
 " Autocomplete, lang spec.
 augroup abbrev
