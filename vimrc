@@ -1,7 +1,7 @@
 "Pathogen
 "runtime bundle/vim-pathogen/autoload/pathogen.vim
 source ~/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect( '~/dotfiles/vim/bundle' )
+call pathogen#infect( '~/.vim/bundle' )
 
 syntax on
 filetype plugin on
