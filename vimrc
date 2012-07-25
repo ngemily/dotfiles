@@ -31,6 +31,12 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+if exists ("&undofile")
+  set undofile
+endif
+if exists ("&undodir")
+  set undodir=$HOME/.vimundo//
+endif
 
 " Abbreviations "
 " Typo correction
