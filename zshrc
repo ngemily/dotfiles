@@ -63,4 +63,4 @@ alias gpsh='git push origin'
 alias gpl='git pull origin'
 
 # Current proj
-alias proj='cd ~/Repos/VirtualPet/app'
+proj='~/Repos/VirtualPet/app'
