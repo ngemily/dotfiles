@@ -41,6 +41,7 @@ export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nom
 alias ls='ls -aG'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 
+# Redirect vim to Mvim
 alias vim='mvim -v'
 alias gvim='mvim'
 
@@ -50,8 +51,6 @@ alias gst='git status --short'
 alias gchd='git checkout dev'
 alias gch='git checkout'
 alias gcm='git commit -m'
-alias gpd='git push origin dev'
-alias gld='git pull origin dev'
 alias gpo='git push origin'
 alias glo='git pull origin'
 alias gb='git branch'
@@ -63,6 +62,5 @@ alias gd='git diff'
 alias gpsh='git push origin'
 alias gpl='git pull origin'
 
-alias gsh='git stash'
-alias gsha='git stash apply'
-
+# Current proj
+alias proj='cd ~/Repos/VirtualPet/app'
