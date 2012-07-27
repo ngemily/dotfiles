@@ -65,4 +65,9 @@ alias gpsh='git push origin'
 alias gpl='git pull origin'
 
 # Current proj
-proj='~/Repos/VirtualPet/app'
+alias proj='cd ~/Repos/VirtualPet/app'
+
+# Journal
+alias jmount='open ~/Documents/Journal.dmg'
+alias j='cd /Volumes/Journal'
+alias jumount='diskutil umount Journal'
