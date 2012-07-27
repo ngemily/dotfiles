@@ -49,6 +49,7 @@ alias gvim='mvim'
 
 # GIT
 alias g='git'
+alias gitx='nocorrect gitx'
 alias gst='git status --short'
 alias gchd='git checkout dev'
 alias gch='git checkout'
