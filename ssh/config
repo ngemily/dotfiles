@@ -5,3 +5,9 @@ Host github
   IdentityFile ~/.ssh-keys/github
   TCPKeepAlive yes
   IdentitiesOnly yes
+
+Host ecf
+  User ngemily2
+  Hostname p170.ecf.toronto.edu
+  IdentityFile ~/.ssh-keys/ecf
+  TCPKeepAlive yes
