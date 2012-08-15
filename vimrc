@@ -37,6 +37,10 @@ endif
 if exists ("&undodir")
   set undodir=$HOME/.vimundo//
 endif
+set nocompatible
+set laststatus=2
+set encoding=utf-8
+set t_Co=256
 
 " Abbreviations "
 " Typo correction
@@ -135,3 +139,7 @@ function! TaglistToggle()
   endif
 endfunction
 command! TToggle call TaglistToggle()
+
+" Plugin options
+
+let g:Powerline_symbols = 'unicode'
