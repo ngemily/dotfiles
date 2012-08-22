@@ -46,3 +46,6 @@ alias proj='cd ~/Repos/VirtualPet/app'
 alias jmount='open ~/Documents/Journal.dmg'
 alias j='cd /Volumes/Journal'
 alias jumount='diskutil umount Journal'
+
+# Config dir; .zsh.d
+source ~/.zsh.d/syntax-highlighting/zsh-syntax-highlighting.zsh
