@@ -42,15 +42,6 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=256
 
-" Abbreviations "
-" Typo correction
-iab hten then
-iab htne then
-iab slef self
-iab flase = false
-iab fasle = false
-iab moaidev ../moai-dev/vs2010/bin/win32/release/moai-untz
-
 " Key Mappings "
 " [ General ]
 nnoremap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>
