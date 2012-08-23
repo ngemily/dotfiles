@@ -1,5 +1,4 @@
 "Pathogen
-"runtime bundle/vim-pathogen/autoload/pathogen.vim
 source ~/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect( '~/.vim/bundle' )
 
@@ -12,7 +11,8 @@ let $MANPAGER=''
 " Display "
 colorscheme solarized
 if strftime("%H") < 17 && strftime("%H") > 7
-  set background=light
+  "set background=light
+  set background=dark
 else
   set background=dark
 endif
@@ -80,7 +80,7 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
-" Move current LINE up/down one line
+" Move line
 nnoremap <leader>- ddp
 nnoremap <leader>_ ddkkp
 nnoremap <leader>, <<
