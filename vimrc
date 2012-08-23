@@ -109,10 +109,10 @@ augroup END
 " Autocomplete, lang spec.
 augroup abbrev
   autocmd!
-  autocmd FileType lua :iabbrev <buffer> func function ( ) end<left><left><left><left><left><left>
-  autocmd FileType lua :iabbrev <buffer> iff if then end<left><left><left><left><left><left><left><left><left>
-  autocmd FileType lua :iabbrev <buffer> fori for i in ipairs () do end<left><left><left><left><left><left><left><left>
-  autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end<left><left><left><left><left><left><left><left>
+  autocmd FileType lua :iabbrev <buffer> func function ( ) end
+  autocmd FileType lua :iabbrev <buffer> iff if then end
+  autocmd FileType lua :iabbrev <buffer> fori for i in ipairs () do end
+  autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end
 augroup END
 
 function! TaglistToggle()
@@ -132,5 +132,4 @@ endfunction
 command! TToggle call TaglistToggle()
 
 " Plugin options
-
 let g:Powerline_symbols = 'unicode'
