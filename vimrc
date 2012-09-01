@@ -42,7 +42,7 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=256
 set foldmethod=indent
-set foldlevel=0
+set foldlevel=99
 set foldnestmax=10
 
 " Key Mappings "
