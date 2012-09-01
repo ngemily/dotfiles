@@ -7,6 +7,10 @@ ZSH_THEME="alanpeabody"
 # Plugins
 plugins=(git brew osx rvm ruby gem rails3 rails)
 
+if [ TERM="xterm" ]; then
+  export TERM='screen-256color-bce'
+fi
+
 # Quick edit zshrc
 source $ZSH/oh-my-zsh.sh
 alias ez='vim ~/.zshrc'
