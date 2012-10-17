@@ -5,7 +5,7 @@ call pathogen#infect( '~/.vim/bundle' )
 syntax on
 filetype plugin on
 let mapleader = ' '
-let maplocalleader = ','
+let maplocalleader = '`'
 let $MANPAGER=''
 
 " Display "
