@@ -43,8 +43,9 @@ alias gd='git diff'
 alias gap='git add -p'
 alias gd='git diff'
 
-# Current proj
-alias proj='cd ~/Repos/VirtualPet/app'
+# Projects and directories
+alias fits='ftp tymagni2@colorfits.com'
+alias skule='cd ~/Dropbox/My\ Classes'
 
 # Journal
 alias jmount='open ~/Documents/Journal.dmg'
