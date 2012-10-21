@@ -17,7 +17,7 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 
 # Aliases
