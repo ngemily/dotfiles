@@ -31,6 +31,7 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 if exists ("&undofile")
   set undofile
 endif
@@ -44,6 +45,7 @@ set t_Co=256
 set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
+set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 " Key Mappings "
 " [ General ]
@@ -64,6 +66,7 @@ nnoremap <F3> :ls!<CR>
 nnoremap <leader>w :w<CR>
 nnoremap cF cwtrue<ESC>
 nnoremap cT cwfalse<ESC>
+nnoremap <leader>l :set list!<CR>
 " Tlist
 nnoremap <C-t><C-r> :TlistOpen<CR><C-c>
 nnoremap <C-t> :TlistClose<CR>
