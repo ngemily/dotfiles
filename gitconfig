@@ -17,7 +17,7 @@
 [interactive]
   singlekey = true
 [core]
-	excludesfile = ~/.cvsignore
-	editor = vim
+  excludesfile = ~/.cvsignore
+  editor = vim
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
