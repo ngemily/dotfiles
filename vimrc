@@ -148,5 +148,9 @@ function! TaglistToggle()
 endfunction
 command! TToggle call TaglistToggle()
 
+" Commands
+command! NoComment :%s/\v\/\*.+\*\///
+command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
+
 " Plugin options
 let g:Powerline_symbols = 'unicode'
