@@ -112,6 +112,17 @@ augroup comment_line
   autocmd FileType lua nnoremap <buffer> <localleader>c I--<ESC>
   autocmd FileType lua nnoremap <buffer> <localleader>C 0wxx
 augroup END
+" Completion group
+augroup completion
+  autocmd FileType python setl omnifunc=pythoncomplete#Complete
+  autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+  autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
+  autocmd FileType c setl omnifunc=ccomplete#Complete
+  autocmd FileType ruby setl omnifunc=rubycomplete#Complete
+augroup END
 " Autocomplete, lang spec.
 augroup abbrev
   autocmd!
