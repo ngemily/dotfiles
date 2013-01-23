@@ -48,6 +48,9 @@ alias gd='git diff'
 # MATLAB
 alias matlab='matlab -nodesktop -nosplash'
 
+# VBox machines
+alias XP='VBoxManage startvm Windows\ XP'
+
 # Projects and directories
 alias fits='ftp tymagni2@colorfits.com'
 alias skule='cd ~/Dropbox/My\ Classes'
