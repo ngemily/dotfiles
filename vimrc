@@ -101,6 +101,11 @@ onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 
 " Auto commands
+" Syntax group
+augroup syntax
+  autocmd!
+  autocmd BufNewFile,BufRead *.io set filetype=io
+augroup END
 " Enter insert mode when editing new file.
 augroup new_file
   autocmd!
