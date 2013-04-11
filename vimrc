@@ -7,6 +7,7 @@ filetype plugin on
 let mapleader = ' '
 let maplocalleader = '`'
 let $MANPAGER=''
+let tex_flavor='latex'
 
 " Display "
 colorscheme solarized
