@@ -33,6 +33,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set ruler
+set textwidth=80
 if exists ("&undofile")
   set undofile
 endif
@@ -92,6 +94,9 @@ nnoremap <leader>- ddp
 nnoremap <leader>_ ddkkp
 nnoremap <leader>, <<
 nnoremap <leader>. >>
+" Cutting lines
+nnoremap Q gqip
+vnoremap Q gq
 " Quick editing vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
