@@ -78,7 +78,6 @@ nnoremap <F5> :echo Tlist_Get_Tagname_By_Line()<CR>
 " NERDTree
 nnoremap <silent> <C-n><C-b> :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nnoremap <silent> <C-n><C-n> :NERDTreeClose<CR>:NERDTreeFind<CR>
-nnoremap <silent> <C-n> :NERDTreeClose<CR>
 " Gundo
 nnoremap <leader>g :GundoToggle<CR><C-c>
 " Fugitive
@@ -100,9 +99,12 @@ vnoremap Q gq
 " Quick editing vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" [ Insert mode ]
+inoremap <C-j> <Plug>IMAP_JumpForward
 " [ Operator pending ]
 onoremap <silent> in( :<C-u>normal! f(vi(<cr>
 onoremap <silent> in{ :<C-u>normal! f{vi{<cr>
+onoremap <silent> in[ :<C-u>normal! f[vi[<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 
