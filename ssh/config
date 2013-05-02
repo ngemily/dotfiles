@@ -11,3 +11,9 @@ Host ecf
   Hostname p170.ecf.toronto.edu
   IdentityFile ~/.ssh-keys/ecf
   TCPKeepAlive yes
+
+Host bitbucket
+  HostName bitbucket.org
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh-keys/bitbucket
+  TCPKeepAlive yes
