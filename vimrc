@@ -59,6 +59,11 @@ nnoremap H 0w
 vnoremap H 0w
 nnoremap L $
 vnoremap L $
+" Pane sizing
+nnoremap <leader>L <C-w>5>
+nnoremap <leader>H <C-w>5<
+nnoremap <leader>K <C-w>5-
+nnoremap <leader>J <C-w>5+
 " To upper case 
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
