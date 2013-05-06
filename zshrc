@@ -7,6 +7,9 @@ ZSH_THEME="alanpeabody"
 # Plugins
 plugins=(git brew osx rvm ruby gem rails3 rails)
 
+# Shell opts
+DISABLE_AUTO_TITLE=true
+
 if [ TERM="xterm" ]; then
   export TERM='screen-256color-bce'
 fi
