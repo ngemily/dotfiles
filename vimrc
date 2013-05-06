@@ -49,6 +49,9 @@ set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
 set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
 " Key Mappings "
 " [ General ]
