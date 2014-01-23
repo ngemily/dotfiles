@@ -9,6 +9,7 @@ plugins=(git brew osx rvm ruby gem rails3 rails)
 
 # Shell opts
 DISABLE_AUTO_TITLE=true
+setopt NO_BEEP
 
 if [ TERM="xterm" ]; then
   export TERM='screen-256color-bce'
@@ -20,7 +21,7 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/python
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/sbin
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
@@ -33,6 +34,10 @@ alias gvim='mvim'
 alias python='/usr/local/Cellar/python/2.7.3/bin/python'
 alias t='python ~/Repos/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 alias ql='quick-look'
+alias termtter='ruby ~/bin/termtter/bin/termtter'
+alias skype='skype4cocoa'
+alias fbme='fbcmd notices markread'
+alias fb='fbcmd'
 
 # GIT
 alias g='git'
@@ -49,17 +54,17 @@ alias gd='git diff'
 alias gap='git add -p'
 alias gd='git diff'
 
-# MATLAB
+# Programs
 alias matlab='matlab -nodesktop -nosplash'
-
-# VBox machines
 alias XP='VBoxManage startvm Windows\ XP'
+alias jnios='java -jar ~/scripts/jniosemu.jar'
 
 # Utilities
 alias lsusb='system_profiler SPUSBDataType'
 
 # Projects and directories
 alias fits='ftp tymagni2@colorfits.com'
+alias me='ftp ngemily2@individual.utoronto.ca'
 alias skule='cd ~/Dropbox/My\ Classes'
 
 # Journal
@@ -69,3 +74,5 @@ alias jumount='diskutil umount Journal'
 
 # Config dir; .zsh.d
 source ~/.zsh.d/syntax-highlighting/zsh-syntax-highlighting.zsh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
