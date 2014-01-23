@@ -17,3 +17,11 @@ Host bitbucket
   PreferredAuthentications publickey
   IdentityFile ~/.ssh-keys/bitbucket
   TCPKeepAlive yes
+
+Host heroku.com
+  Hostname heroku.com
+  Port 22
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh-keys/heroku
+  TCPKeepAlive yes
+  User ngemily
