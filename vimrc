@@ -67,6 +67,7 @@ nnoremap <leader>L <C-w>5>
 nnoremap <leader>H <C-w>5<
 nnoremap <leader>K <C-w>5-
 nnoremap <leader>J <C-w>5+
+nnoremap <C-J> <C-j>
 " To upper case 
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
@@ -108,13 +109,18 @@ vnoremap Q gq
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " [ Insert mode ]
-inoremap <C-j> <Plug>IMAP_JumpForward
+imap <C-j> <Plug>IMAP_JumpForward
+"imap <C-i> <Plug>Tex_InsertItemOnThisLine
+"imap <C-b> <Plug>Tex_MathBF
+"imap <C-c> <Plug>Tex_MathCal
+"imap <C-l> <Plug>Tex_LeftRight
 " [ Operator pending ]
 onoremap <silent> in( :<C-u>normal! f(vi(<cr>
 onoremap <silent> in{ :<C-u>normal! f{vi{<cr>
 onoremap <silent> in[ :<C-u>normal! f[vi[<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
+onoremap <silent> in< :<C-U>normal! f<vi<<cr>
 
 " Auto commands
 " Syntax group
@@ -131,6 +137,7 @@ augroup END
 augroup comment_line
   autocmd!
   autocmd FileType lua nnoremap <buffer> <localleader>c I--<ESC>
+  autocmd FileType c nnoremap <buffer> <localleader>c I//<ESC>
   autocmd FileType lua nnoremap <buffer> <localleader>C 0wxx
 augroup END
 " Completion group
