@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="alanpeabody"
 
 # Plugins
-plugins=(git brew osx rvm ruby gem rails3 rails)
+plugins=(git brew osx rvm ruby gem rails)
 
 # Shell opts
 DISABLE_AUTO_TITLE=true
@@ -21,10 +21,11 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/npm/bin:/usr/local/sbin
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
+export ANDROID_HOME="/usr/local/opt/android-sdk"
 
 # Aliases
 alias ls='ls -aG'
@@ -65,6 +66,7 @@ alias lsusb='system_profiler SPUSBDataType'
 # Projects and directories
 alias fits='ftp tymagni2@colorfits.com'
 alias me='ftp ngemily2@individual.utoronto.ca'
+alias C='cd ~/.wine/drive_c/Program\ Files'
 alias skule='cd ~/Dropbox/My\ Classes'
 
 # Journal
