@@ -64,7 +64,6 @@ alias jnios='java -jar ~/scripts/jniosemu.jar'
 alias lsusb='system_profiler SPUSBDataType'
 
 # Projects and directories
-alias fits='ftp tymagni2@colorfits.com'
 alias me='ftp ngemily2@individual.utoronto.ca'
 alias C='cd ~/.wine/drive_c/Program\ Files'
 alias skule='cd ~/Dropbox/My\ Classes'
