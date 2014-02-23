@@ -78,4 +78,5 @@ source ~/.zsh.d/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:`brew --prefix android-ndk`/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
+PATH=$PATH:/usr/local/Cellar/android-ndk/r9c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86/bin
 PATH=$PATH:/Volumes/ECE353/android-kernel-tools/tools
