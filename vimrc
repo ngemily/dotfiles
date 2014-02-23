@@ -160,6 +160,7 @@ augroup abbrev
   autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end
 augroup END
 
+" Functions
 function! TaglistToggle()
   let winnum = bufwinnr(g:TagList_title)
   if winnum != -1
@@ -175,6 +176,15 @@ function! TaglistToggle()
   endif
 endfunction
 command! TToggle call TaglistToggle()
+
+function! ToggleBackground()
+  if (&background == "light")
+    set background=dark
+  else
+    set background=light
+  endif
+endfunction
+command! Bg call ToggleBackground()
 
 " Commands
 command! NoComment :%s/\v\/\*.+\*\///
