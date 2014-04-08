@@ -21,7 +21,7 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/npm/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/share/python
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
@@ -80,3 +80,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:`brew --prefix android-ndk`/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
 PATH=$PATH:/usr/local/Cellar/android-ndk/r9c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86/bin
 PATH=$PATH:/Volumes/ECE353/android-kernel-tools/tools
+
