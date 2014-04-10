@@ -97,6 +97,8 @@ nnoremap <leader>g :GundoToggle<CR><C-c>
 " Fugitive
 nnoremap <leader>G :Gstatus<CR>
 nnoremap <leader>D :Gdiff<CR>
+" Toggle words
+nnoremap <leader>t :Toggle<CR>
 " window nav
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
