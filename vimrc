@@ -134,6 +134,7 @@ onoremap <silent> in< :<C-U>normal! f<vi<<cr>
 augroup syntax
   autocmd!
   autocmd BufNewFile,BufRead *.io set filetype=io
+  autocmd BufNewFile,BufRead *.cls set filetype=tex
 augroup END
 " Enter insert mode when editing new file.
 augroup new_file
