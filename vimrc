@@ -136,6 +136,11 @@ augroup syntax
   autocmd BufNewFile,BufRead *.io set filetype=io
   autocmd BufNewFile,BufRead *.cls set filetype=tex
 augroup END
+" Whitespace management
+augroup whitespace
+  autocmd!
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+augroup END
 " Enter insert mode when editing new file.
 augroup new_file
   autocmd!
