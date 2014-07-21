@@ -26,6 +26,7 @@ export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nom
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
 export ANDROID_HOME="/usr/local/opt/android-sdk"
+export C="/Users/ngemily/.wine/drive_c/Program Files"
 
 # Aliases
 alias ls='ls -aG'
