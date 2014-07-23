@@ -29,7 +29,7 @@ export ANDROID_HOME="/usr/local/opt/android-sdk"
 export C="/Users/ngemily/.wine/drive_c/Program Files"
 
 # Aliases
-alias ls='ls -aG'
+alias ls='ls -aFG'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias vim='mvim -v'
 alias gvim='mvim'
