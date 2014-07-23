@@ -43,17 +43,11 @@ alias fb='fbcmd'
 
 # GIT
 alias g='git'
-alias gitx='nocorrect gitx'
 alias gst='git status --short'
-alias gchd='git checkout dev'
 alias gch='git checkout'
 alias gcm='git commit -m'
-alias gpo='git push origin'
-alias glo='git pull origin'
 alias gb='git branch'
 alias ga='git add'
-alias gd='git diff'
-alias gap='git add -p'
 alias gd='git diff'
 
 # Programs
