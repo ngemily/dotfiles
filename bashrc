@@ -236,4 +236,10 @@ alias gsha='git stash apply'
 alias ribbon='tag --force _ribbon origin/master'
 alias catchup='log --patch --reverse --topo-order _ribbon..origin/master'
 
+stty werase undef
+bind '\C-w:unix-filename-rubout'
+
+alias eb='vim ~/.bashrc'
+alias sb='source ~/.bashrc'
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
