@@ -77,7 +77,6 @@ nnoremap <C-J> <C-j>
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
 " [ Normal mode ]
-nnoremap / /\v
 nnoremap <silent> <leader>/ :let @/=""<CR>
 nnoremap <F3> :ls!<CR>
 nnoremap <leader>w :w<CR>
@@ -128,6 +127,8 @@ onoremap <silent> in[ :<C-u>normal! f[vi[<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 onoremap <silent> in< :<C-U>normal! f<vi<<cr>
+" [ Quich Search ]
+vnorem // y/<c-r>"<cr>
 
 " Auto commands
 " Syntax group
@@ -140,6 +141,8 @@ augroup END
 augroup whitespace
   autocmd!
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab tw=0
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab tw=0
 augroup END
 " Enter insert mode when editing new file.
 augroup new_file
