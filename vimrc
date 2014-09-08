@@ -127,8 +127,10 @@ onoremap <silent> in[ :<C-u>normal! f[vi[<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 onoremap <silent> in< :<C-U>normal! f<vi<<cr>
-" [ Quich Search ]
+" Quich Search
 vnorem // y/<c-r>"<cr>
+" Change to directory of current file.
+nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
 
 " Auto commands
 " Syntax group
