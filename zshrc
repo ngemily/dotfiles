@@ -31,8 +31,6 @@ export C="/Users/ngemily/.wine/drive_c/Program Files"
 # Aliases
 alias ls='ls -aFG'
 alias less='/usr/share/vim/vim73/macros/less.sh'
-alias vim='mvim -v'
-alias gvim='mvim'
 alias python='/usr/local/Cellar/python/2.7.3/bin/python'
 alias t='python ~/Repos/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 alias ql='quick-look'
