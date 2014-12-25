@@ -25,7 +25,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scri
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
-export ANDROID_HOME="/usr/local/opt/android-sdk"
 export C="/Users/ngemily/.wine/drive_c/Program Files"
 
 # Aliases
@@ -41,7 +40,6 @@ alias fb='fbcmd'
 
 # Programs
 alias matlab='matlab -nodesktop -nosplash'
-alias XP='VBoxManage startvm Windows\ XP'
 alias jnios='java -jar ~/scripts/jniosemu.jar'
 
 # Utilities
@@ -49,19 +47,5 @@ alias lsusb='system_profiler SPUSBDataType'
 
 # Projects and directories
 alias me='ftp ngemily2@individual.utoronto.ca'
-alias C='cd ~/.wine/drive_c/Program\ Files'
-alias skule='cd ~/Dropbox/My\ Classes'
-
-# Journal
-alias jmount='open ~/Documents/Journal.dmg'
-alias j='cd /Volumes/Journal'
-alias jumount='diskutil umount Journal'
-
-# Config dir; .zsh.d
-source ~/.zsh.d/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:`brew --prefix android-ndk`/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
-PATH=$PATH:/usr/local/Cellar/android-ndk/r9c/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86/bin
-PATH=$PATH:/Volumes/ECE353/android-kernel-tools/tools
-
