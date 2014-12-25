@@ -39,15 +39,6 @@ alias skype='skype4cocoa'
 alias fbme='fbcmd notices markread'
 alias fb='fbcmd'
 
-# GIT
-alias g='git'
-alias gst='git status --short'
-alias gch='git checkout'
-alias gcm='git commit -m'
-alias gb='git branch'
-alias ga='git add'
-alias gd='git diff'
-
 # Programs
 alias matlab='matlab -nodesktop -nosplash'
 alias XP='VBoxManage startvm Windows\ XP'
