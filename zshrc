@@ -21,22 +21,36 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/scripts:/Applications/MATLAB_R2012a.app/bin:/usr/texbin:~/bin:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/share/python
+export PATH=/usr/local/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:/Applications/MATLAB_R2012a.app/bin
+export PATH=$PATH:/usr/texbin
+export PATH=$PATH:~/bin
+export PATH=$PATH:/usr/local/share/npm/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/Applications/VMware\ Fusion.app/Contents/Library
+
 export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
 export C="/Users/ngemily/.wine/drive_c/Program Files"
 
 # Aliases
-alias ls='ls -aFG'
+if [ -e ~/.aliases ]; then
+  source ~/.aliases
+fi
 alias less='/usr/share/vim/vim73/macros/less.sh'
-alias python='/usr/local/Cellar/python/2.7.3/bin/python'
-alias t='python ~/Repos/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 alias ql='quick-look'
-alias termtter='ruby ~/bin/termtter/bin/termtter'
-alias skype='skype4cocoa'
-alias fbme='fbcmd notices markread'
-alias fb='fbcmd'
+
+# Functions
+if [ -e ~/.functions ]; then
+  source ~/.functions
+fi
 
 # Programs
 alias matlab='matlab -nodesktop -nosplash'

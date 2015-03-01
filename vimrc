@@ -1,6 +1,10 @@
 "Pathogen
-source ~/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect( '~/.vim/bundle/{}' )
+source ~/Repos/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect( '~/Repos/dotfiles/vim/bundle/{}' )
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 syntax on
 filetype plugin on
@@ -10,9 +14,9 @@ let $MANPAGER=''
 let tex_flavor='latex'
 
 " Powerline setup "
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 " Display "
 colorscheme solarized
@@ -35,9 +39,9 @@ set ignorecase
 set incsearch
 set autoindent
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set ruler
 set textwidth=80
 if exists ("&undofile")
@@ -48,6 +52,7 @@ if exists ("&undodir")
 endif
 set nocompatible
 set laststatus=2
+set noshowmode
 set encoding=utf-8
 set t_Co=256
 set foldmethod=indent
