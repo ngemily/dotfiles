@@ -1,7 +1,3 @@
-"Pathogen
-source ~/Repos/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect( '~/Repos/dotfiles/vim/bundle/{}' )
-
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
