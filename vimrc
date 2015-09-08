@@ -185,11 +185,6 @@ augroup whitespace
   autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab tw=0
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab tw=0
 augroup END
-" Enter insert mode when editing new file.
-augroup new_file
-  autocmd!
-  autocmd BufNewFile * :startinsert
-augroup END
 " Comment group
 augroup comment_line
   autocmd!
