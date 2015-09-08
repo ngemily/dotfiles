@@ -21,11 +21,15 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 # Export
+if [ -e ~/.exports ]; then
+  source ~/.exports
+fi
 export PATH=/usr/local/bin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
+export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/Applications/MATLAB_R2012a.app/bin
@@ -46,8 +50,13 @@ if [ -e ~/.aliases ]; then
 fi
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ql='quick-look'
-alias vim='mvim -v'
-alias vimdiff='mvimdiff -v'
+
+# Use mvim if installed
+which mvim &> /dev/null
+if [ $? -eq 0 ]; then
+    alias vim='mvim -v'
+    alias vimdiff='mvimdiff -v'
+fi
 
 # Functions
 if [ -e ~/.functions ]; then
