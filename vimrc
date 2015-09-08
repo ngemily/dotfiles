@@ -26,6 +26,12 @@ try
 catch
 endtry
 
+" Global variables
+let mapleader = ' '
+let maplocalleader = '`'
+let $MANPAGER=''
+let tex_flavor='latex'
+
 " Filetype options
 filetype plugin on
 filetype indent on
@@ -38,12 +44,7 @@ colorscheme solarized
 set ruler
 set number
 set background=dark
-
-" Global variables
-let mapleader = ' '
-let maplocalleader = '`'
-let $MANPAGER=''
-let tex_flavor='latex'
+set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 
 " Windows and Buffers
 set hidden         " keep buffers open, but hidden, when abandoned
@@ -78,16 +79,16 @@ set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
 
-set showmatch " show matching brace when inserted
-set noshowmode " put a message stating editing mode
+" Terminal settings
 set encoding=utf-8
 set t_Co=256 " number of terminal colors
-
-set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
-set cpo+=J " for two space at end of sentence
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+
+set cpo+=J " for two space at end of sentence
+set showmatch " show matching brace when inserted
+set noshowmode " put a message stating editing mode
 
 " --------------
 "  Key Mappings
@@ -113,12 +114,10 @@ nnoremap <C-J> <C-j>
 " To upper case
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
-" [ Normal mode ]
+"
 nnoremap <silent> <leader>/ :let @/=""<CR>
 nnoremap <F3> :ls!<CR>
 nnoremap <leader>w :w<CR>
-nnoremap cF cwtrue<ESC>
-nnoremap cT cwfalse<ESC>
 nnoremap <leader>l :set list!<CR>
 " window nav
 nnoremap <C-j> <C-W>j
@@ -130,7 +129,7 @@ nnoremap <leader>- ddp
 nnoremap <leader>_ ddkkp
 nnoremap <leader>, <<
 nnoremap <leader>. >>
-" Cutting lines
+" Formatting
 nnoremap Q gqip
 vnoremap Q gq
 " Quick editing vimrc
@@ -149,7 +148,7 @@ onoremap <silent> in[ :<C-u>normal! f[vi[<cr>
 onoremap <silent> in" :<C-U>normal! f"vi"<cr>
 onoremap <silent> in' :<C-U>normal! f'vi'<cr>
 onoremap <silent> in< :<C-U>normal! f<vi<<cr>
-" Quich Search
+" Quick Search
 vnorem // y/<c-r>"<cr>
 " Change to directory of current file.
 "nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
