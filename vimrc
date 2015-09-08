@@ -6,75 +6,94 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'sjl/gundo.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 call vundle#end()
-filetype plugin indent on
 
-syntax on
+" Powerline setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+" Filetype options
 filetype plugin on
+filetype indent on
+
+" Syntax options
+syntax on
+
+" Display
+colorscheme solarized
+set ruler
+set number
+
+" Global variables
 let mapleader = ' '
 let maplocalleader = '`'
 let $MANPAGER=''
 let tex_flavor='latex'
 
-" Powerline setup "
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Windows and Buffers
+set hidden         " keep buffers open, but hidden, when abandoned
+set winminheight=0 " minimum window height
+set laststatus=2   " status-line display mode [0-2]
 
-" Display "
-colorscheme solarized
-if strftime("%H") < 17 && strftime("%H") > 7
-  "set background=light
-  set background=dark
-else
-  set background=dark
-endif
+" Pattern Matching
+set magic      " use magic matching
+set incsearch  " show matches as pattern is being entered
+set hlsearch   " highlight all matching expressions
+set ignorecase " ignore case
+set smartcase  " override ignore case if searching upper case
 
-" Set "
-set magic
-set ruler
-set number
-set hidden
-set winminheight=0
-set showmatch
-set hlsearch
-set ignorecase
-set incsearch
-set autoindent
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set ruler
-set textwidth=80
+" Tabs and Spaces
+set autoindent    " enter insert mode on new line with same indent level
+set expandtab     " enter tab key presses as spaces
+set shiftwidth=4  " number of spaces for each step of auto-indent
+set softtabstop=4 " number of spaces a tab counts for while editing
+set tabstop=4     " number of spaces a tab counts for
+set textwidth=80  " maximum line length
+
+" Undo files
 if exists ("&undofile")
   set undofile
 endif
 if exists ("&undodir")
   set undodir=$HOME/.vimundo//
 endif
-set nocompatible
-set laststatus=2
-set noshowmode
-set encoding=utf-8
-set t_Co=256
+
+" Folding
 set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
+
+set showmatch " show matching brace when inserted
+set noshowmode " put a message stating editing mode
+set encoding=utf-8
+set t_Co=256 " number of terminal colors
+
 set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+set cpo+=J " for two space at end of sentence
 if $TMUX == ''
   set clipboard+=unnamed
 endif
 
-" Key Mappings "
-" [ General ]
-nnoremap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+" --------------
+"  Key Mappings
+" --------------
+" Display count of current search
+nnoremap <leader>C :%s///gn<cr>
+" Search highlighted word
+vnoremap ? y:let @/=@"<CR>:%s///gn<cr>
+" Escape insert mode
 inoremap jk <ESC>
 vnoremap kl <ESC>
+" Movement
 nnoremap H 0w
 vnoremap H 0w
 nnoremap L $
@@ -85,7 +104,7 @@ nnoremap <leader>H <C-w>5<
 nnoremap <leader>K <C-w>5-
 nnoremap <leader>J <C-w>5+
 nnoremap <C-J> <C-j>
-" To upper case 
+" To upper case
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
 " [ Normal mode ]
@@ -95,6 +114,9 @@ nnoremap <leader>w :w<CR>
 nnoremap cF cwtrue<ESC>
 nnoremap cT cwfalse<ESC>
 nnoremap <leader>l :set list!<CR>
+" ---------
+"  Plugins
+" ---------
 " Tlist
 nnoremap <C-t><C-r> :TlistOpen<CR><C-c>
 nnoremap <C-t> :TlistClose<CR>
@@ -142,7 +164,7 @@ onoremap <silent> in< :<C-U>normal! f<vi<<cr>
 " Quich Search
 vnorem // y/<c-r>"<cr>
 " Change to directory of current file.
-nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
+"nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
 
 " Auto commands
 " Syntax group
@@ -150,6 +172,7 @@ augroup syntax
   autocmd!
   autocmd BufNewFile,BufRead *.io set filetype=io
   autocmd BufNewFile,BufRead *.cls set filetype=tex
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
 augroup END
 " Whitespace management
 augroup whitespace

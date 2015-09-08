@@ -46,6 +46,8 @@ if [ -e ~/.aliases ]; then
 fi
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ql='quick-look'
+alias vim='mvim -v'
+alias vimdiff='mvimdiff -v'
 
 # Functions
 if [ -e ~/.functions ]; then
