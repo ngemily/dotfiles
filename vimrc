@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'nelstrom/vim-markdown-folding'
@@ -21,6 +22,7 @@ try
     python from powerline.vim import setup as powerline_setup
     python powerline_setup()
     python del powerline_setup
+    let g:Powerline_symbols = 'unicode'
 catch
 endtry
 
@@ -118,24 +120,6 @@ nnoremap <leader>w :w<CR>
 nnoremap cF cwtrue<ESC>
 nnoremap cT cwfalse<ESC>
 nnoremap <leader>l :set list!<CR>
-" ---------
-"  Plugins
-" ---------
-" Tlist
-nnoremap <C-t><C-r> :TlistOpen<CR><C-c>
-nnoremap <C-t> :TlistClose<CR>
-nnoremap <leader>T :TToggle<CR><C-c>
-nnoremap <F5> :echo Tlist_Get_Tagname_By_Line()<CR>
-" NERDTree
-nnoremap <silent> <C-n><C-b> :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nnoremap <silent> <C-n><C-n> :NERDTreeClose<CR>:NERDTreeFind<CR>
-" Gundo
-nnoremap <leader>g :GundoToggle<CR><C-c>
-" Fugitive
-nnoremap <leader>G :Gstatus<CR>
-nnoremap <leader>D :Gdiff<CR>
-" Toggle words
-nnoremap <leader>t :Toggle<CR>
 " window nav
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
@@ -170,7 +154,9 @@ vnorem // y/<c-r>"<cr>
 " Change to directory of current file.
 "nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
 
-" Auto commands
+" --------------
+"  Auto commands
+" --------------
 " Syntax group
 augroup syntax
   autocmd!
@@ -212,23 +198,8 @@ augroup abbrev
   autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end
 augroup END
 
+" ---------
 " Functions
-function! TaglistToggle()
-  let winnum = bufwinnr(g:TagList_title)
-  if winnum != -1
-    TlistClose
-  else
-    TlistOpen
-    if &background=="light"
-      highlight MyTagListFileName ctermbg=none
-      highlight MyTagListFileName ctermfg=magenta
-    else
-      highlight MyTagListFileName ctermbg=red
-    endif
-  endif
-endfunction
-command! TToggle call TaglistToggle()
-
 function! ToggleBackground()
   if (&background == "light")
     set background=dark
@@ -238,9 +209,8 @@ function! ToggleBackground()
 endfunction
 command! Bg call ToggleBackground()
 
+" --------
 " Commands
+" --------
 command! NoComment :%s/\v\/\*.+\*\///
 command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
-
-" Plugin options
-let g:Powerline_symbols = 'unicode'
