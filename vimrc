@@ -35,9 +35,9 @@ syntax on
 
 " Display
 colorscheme solarized
-set ruler
-set number
-set background=dark
+set ruler           " show position in file on status line
+set number          " show line numbers
+set background=dark " set background light/dark
 
 " Global variables
 let mapleader = ' '
