@@ -17,9 +17,12 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 call vundle#end()
 
 " Powerline setup
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+try
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+catch
+endtry
 
 " Filetype options
 filetype plugin on
@@ -32,6 +35,7 @@ syntax on
 colorscheme solarized
 set ruler
 set number
+set background=dark
 
 " Global variables
 let mapleader = ' '
