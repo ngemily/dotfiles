@@ -80,11 +80,9 @@ set foldlevel=99
 set foldnestmax=10
 
 " Terminal settings
-set encoding=utf-8
-set t_Co=256 " number of terminal colors
-if $TMUX == ''
-  set clipboard+=unnamed
-endif
+set encoding=utf-8     " character encoding
+set t_Co=256           " number of terminal colors
+set clipboard+=unnamed " enable yank to system clipboard
 
 set cpo+=J " for two space at end of sentence
 set showmatch " show matching brace when inserted
