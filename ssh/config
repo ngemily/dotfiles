@@ -1,27 +1,27 @@
-Host github
+Host github.com
   User git
   Port 22
   Hostname github.com
-  IdentityFile ~/.ssh-keys/github
+  IdentityFile ~/.ssh/private/github_rsa
   TCPKeepAlive yes
   IdentitiesOnly yes
 
 Host ecf
   User ngemily2
-  Hostname p170.ecf.toronto.edu
-  IdentityFile ~/.ssh-keys/ecf
+  Hostname remote.ecf.utoronto.ca
+  IdentityFile ~/.ssh/private/ecf
   TCPKeepAlive yes
 
 Host bitbucket
   HostName bitbucket.org
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh-keys/bitbucket
+  IdentityFile ~/.ssh/private/bitbucket
   TCPKeepAlive yes
 
 Host heroku.com
   Hostname heroku.com
   Port 22
   IdentitiesOnly yes
-  IdentityFile ~/.ssh-keys/heroku
+  IdentityFile ~/.ssh/private/heroku
   TCPKeepAlive yes
   User ngemily

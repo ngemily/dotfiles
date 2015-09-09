@@ -77,3 +77,10 @@ Get powerline font/symbols.
 Link config files
 
     ln -s $PATH_TO_REPO/powerline ~/.config/powerline
+
+SSH
+---
+
+Link config
+
+    ln -s $PATH_TO_REPO/ssh/config ~/.ssh/config
