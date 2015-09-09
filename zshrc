@@ -24,7 +24,7 @@ alias sz='source ~/.zshrc'
 if [ -e ~/.exports ]; then
   source ~/.exports
 fi
-export PATH=/usr/local/bin
+export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/sbin
