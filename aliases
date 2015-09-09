@@ -8,8 +8,8 @@ alias lrt='ls -lrthFG'
 alias lrtt='ls -lrthFG | tail'
 alias la='ls -ahFG'
 
-alias tarball='tar -cvfz'
-alias untar='tar -xvfz'
+alias tarball='tar -cvzf'
+alias untar='tar -xvzf'
 
 alias u='cd ..'
 alias uu='cd ../..'
