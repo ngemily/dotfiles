@@ -72,3 +72,8 @@ Powerline
 
 Get pip.
 Get powerline.
+Get powerline font/symbols.
+
+Link config files
+
+    ln -s $PATH_TO_REPO/powerline ~/.config/powerline
