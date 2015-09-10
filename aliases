@@ -8,12 +8,16 @@ alias lrt='ls -lrthFG'
 alias lrtt='ls -lrthFG | tail'
 alias la='ls -ahFG'
 
-alias tarball='tar -cvzf'
-alias untar='tar -xvzf'
-
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
+
+alias tarball='tar -cvzf'
+alias untar='tar -xvzf'
+
+alias size='du -h'
+
+alias deflate='gunzip -rf *'
 
 alias vvim='vim -O'
