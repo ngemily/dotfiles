@@ -12,6 +12,12 @@ Host ecf
   IdentityFile ~/.ssh/private/ecf
   TCPKeepAlive yes
 
+Host ug
+  User ngemily2
+  Hostname ug172.eecg.utoronto.ca
+  IdentityFile ~/.ssh/private/ug_rsa
+  TCPKeepAlive yes
+
 Host bitbucket
   HostName bitbucket.org
   PreferredAuthentications publickey
