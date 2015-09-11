@@ -84,3 +84,7 @@ SSH
 Link config
 
     ln -s $PATH_TO_REPO/ssh/config ~/.ssh/config
+
+Key setup
+
+    https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
