@@ -35,6 +35,11 @@ Install vundle, then install all plugins.
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
+For man page, export output of command below to variable VRT. This will setup
+path to vim's less, which will be used for man's pager.
+
+    vim --cmd 'echo $VIMRUNTIME | q'
+
 Set make undo directory
 
     mkdir ~/.vimundo

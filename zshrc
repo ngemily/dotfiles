@@ -48,7 +48,9 @@ export C="/Users/ngemily/.wine/drive_c/Program Files"
 if [ -e ~/.aliases ]; then
   source ~/.aliases
 fi
-alias less="$VRT/macros/less.sh"
+if [ ! -z $VRT ] ; then
+    alias less="$VRT/macros/less.sh"
+fi
 alias ql='quick-look'
 
 # Use mvim if installed
