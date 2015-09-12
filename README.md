@@ -51,6 +51,10 @@ Get oh-my-zsh
 
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+Get syntax highlight plugin
+
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
 Change default shell
     
     chsh -s $(which zsh)
