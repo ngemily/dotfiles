@@ -40,7 +40,6 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/Applications/VMware\ Fusion.app/Contents/Library
 
-export MANPAGER="col -b | /usr/share/vim/vim73/macros/less.sh -c 'set ft=man nomod nolist' -"
 export M4PATH="$HOME/Library/texmf/tex/latex/Circuit_macros7.3.3"
 export TEXMFHOME="$HOME/Library/texmf"
 export C="/Users/ngemily/.wine/drive_c/Program Files"
@@ -49,7 +48,7 @@ export C="/Users/ngemily/.wine/drive_c/Program Files"
 if [ -e ~/.aliases ]; then
   source ~/.aliases
 fi
-alias less='/usr/share/vim/vim73/macros/less.sh'
+alias less="$VRT/macros/less.sh"
 alias ql='quick-look'
 
 # Use mvim if installed
