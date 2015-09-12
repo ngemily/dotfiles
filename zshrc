@@ -30,6 +30,7 @@ export PATH=$PATH:/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/local/bin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/Applications/MATLAB_R2012a.app/bin
