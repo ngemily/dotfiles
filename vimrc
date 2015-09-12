@@ -39,8 +39,15 @@ filetype indent on
 " Syntax options
 syntax on
 
-" Display
+" Color scheme
 colorscheme solarized
+
+" Terminal settings
+set encoding=utf-8     " character encoding
+set t_Co=256           " number of terminal colors
+set clipboard+=unnamed " enable yank to system clipboard
+
+" Display
 set ruler           " show position in file on status line
 set number          " show line numbers
 set background=dark " set background light/dark
@@ -78,11 +85,6 @@ endif
 set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
-
-" Terminal settings
-set encoding=utf-8     " character encoding
-set t_Co=256           " number of terminal colors
-set clipboard+=unnamed " enable yank to system clipboard
 
 set cpo+=J " for two space at end of sentence
 set showmatch " show matching brace when inserted
