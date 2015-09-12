@@ -1,23 +1,24 @@
 [user]
-  name = Emily Ng
-  email = ngemily2@gmail.com
+    name = Emily Ng
+    email = ngemily2@gmail.com
 [http]
-  postBuffer = 524288000
+    postBuffer = 524288000
 [alias]
-  logg = log --graph
-  lol = log --graph --pretty=oneline --abbrev-commit
-  dc = diff --cached
-  ribbon="tag --force _ribbon remotes/origin/master"
-  catchup="log --patch --reverse --topo-order _ribbon..remotes/origin/master"
+    logg = log --graph
+    lol = log --graph --pretty=oneline --abbrev-commit
+    dc = diff --cached
+    ribbon="tag --force _ribbon remotes/origin/master"
+    catchup="log --patch --reverse --topo-order _ribbon..remotes/origin/master"
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 [interactive]
-  singlekey = true
+    singlekey = true
 [core]
-  excludesfile = ~/.cvsignore
-  editor = vim
+    excludesfile = ~/.cvsignore
+    editor = vim
+    pager = less -F -X
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
