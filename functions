@@ -1,0 +1,9 @@
+man () {
+    if [[ "$#" -lt 1 ]]; then
+        /usr/bin/man $*
+    else
+        /usr/bin/man $* | \
+            col -b | \
+            vim -R -c 'set ft=man nomod nolist' - 
+    fi
+}
