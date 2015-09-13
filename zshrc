@@ -74,3 +74,6 @@ alias lsusb='system_profiler SPUSBDataType'
 alias me='ftp ngemily2@individual.utoronto.ca'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+stty intr '^C'
+stty erase '^?'
