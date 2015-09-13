@@ -11,6 +11,9 @@ plugins=(git brew osx rvm ruby gem rails zsh-syntax-highlighting)
 DISABLE_AUTO_TITLE=true
 setopt NO_BEEP
 
+# zsh opts
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+
 if [ TERM="xterm" ]; then
   export TERM='screen-256color-bce'
 fi
