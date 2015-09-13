@@ -35,6 +35,11 @@ Install vundle, then install all plugins.
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
+For man page, export output of command below to variable VRT. This will setup
+path to vim's less, which will be used for man's pager.
+
+    vim --cmd 'echo $VIMRUNTIME | q'
+
 Set make undo directory
 
     mkdir ~/.vimundo
@@ -50,6 +55,10 @@ Link zshrc, etc.
 Get oh-my-zsh
 
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+Get syntax highlight plugin
+
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 Change default shell
     
