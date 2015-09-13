@@ -31,3 +31,9 @@ Host heroku.com
   IdentityFile ~/.ssh/private/heroku
   TCPKeepAlive yes
   User ngemily
+
+Host legupvm
+  Hostname localhost
+  Port 2222
+  User ngemily
+  IdentityFile ~/.ssh/private/legupvm_rsa
