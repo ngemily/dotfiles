@@ -1,39 +1,39 @@
 Host github.com
-  User git
-  Port 22
-  Hostname github.com
-  IdentityFile ~/.ssh/private/github_rsa
-  TCPKeepAlive yes
-  IdentitiesOnly yes
+    User git
+    Port 22
+    Hostname github.com
+    IdentityFile ~/.ssh/private/github_rsa
+    TCPKeepAlive yes
+    IdentitiesOnly yes
 
 Host ecf
-  User ngemily2
-  Hostname remote.ecf.utoronto.ca
-  IdentityFile ~/.ssh/private/ecf
-  TCPKeepAlive yes
+    User ngemily2
+    Hostname remote.ecf.utoronto.ca
+    IdentityFile ~/.ssh/private/ecf
+    TCPKeepAlive yes
 
 Host ug
-  User ngemily2
-  Hostname ug172.eecg.utoronto.ca
-  IdentityFile ~/.ssh/private/ug_rsa
-  TCPKeepAlive yes
+    User ngemily2
+    Hostname ug172.eecg.utoronto.ca
+    IdentityFile ~/.ssh/private/ug_rsa
+    TCPKeepAlive yes
 
 Host bitbucket
-  HostName bitbucket.org
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/private/bitbucket
-  TCPKeepAlive yes
+    HostName bitbucket.org
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/private/bitbucket
+    TCPKeepAlive yes
 
 Host heroku.com
-  Hostname heroku.com
-  Port 22
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/private/heroku
-  TCPKeepAlive yes
-  User ngemily
+    Hostname heroku.com
+    Port 22
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/private/heroku
+    TCPKeepAlive yes
+    User ngemily
 
 Host legupvm
-  Hostname localhost
-  Port 2222
-  User ngemily
-  IdentityFile ~/.ssh/private/legupvm_rsa
+    Hostname localhost
+    Port 2222
+    User ngemily
+    IdentityFile ~/.ssh/private/legupvm_rsa
