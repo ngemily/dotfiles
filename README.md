@@ -80,7 +80,14 @@ Powerline
 ---------
 
 Get pip.
+
+    curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
+    python get-pip.py [--user]
+
 Get powerline.
+    
+    pip install [--user] powerline-status
+
 Get powerline font/symbols.
 
 Link config files
