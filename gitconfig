@@ -17,7 +17,7 @@
 [interactive]
     singlekey = true
 [core]
-    excludesfile = ~/.cvsignore
+    excludesfile = ~/.gitignore
     editor = vim
     pager = less -F -X
 [credential]
