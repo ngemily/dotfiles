@@ -1,5 +1,6 @@
 CWD=`pwd`
 ln -fs ${CWD}/gitconfig ~/.gitconfig
+ln -fs ${CWD}/gitignore ~/.gitignore
 ln -fs ${CWD}/vimrc ~/.vimrc
 ln -fs ${CWD}/vim ~/.vim
 ln -fs ${CWD}/zshrc ~/.zshrc

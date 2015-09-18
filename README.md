@@ -22,9 +22,10 @@ Get the repository
 
     git clone git@github.com:ngemily/dotfiles.git
 
-Link gitconfig
+Link gitconfig, gitignore
 
     ln -s $PATH_TO_REPO/gitconfig ~/.gitconfig
+    ln -s $PATH_TO_REPO/gitignore ~/.gitignore
 
 Vim 
 ---
