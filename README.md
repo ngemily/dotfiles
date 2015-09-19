@@ -22,6 +22,11 @@ Get the repository
 
     git clone git@github.com:ngemily/dotfiles.git
 
+Link gitconfig, gitignore
+
+    ln -s $PATH_TO_REPO/gitconfig ~/.gitconfig
+    ln -s $PATH_TO_REPO/gitignore ~/.gitignore
+
 Vim 
 ---
 
@@ -101,6 +106,8 @@ Link config
 
     ln -s $PATH_TO_REPO/ssh/config ~/.ssh/config
 
-Key setup
+Key setup (from https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
-    https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
+    ssh-keygen -t rsa
+    ssh-copy-id user@123.45.56.78
+    cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
