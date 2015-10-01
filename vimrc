@@ -54,6 +54,7 @@ set ruler           " show position in file on status line
 set number          " show line numbers
 set background=dark " set background light/dark
 set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+set cursorline      " highlight the cursorline
 
 " Windows and Buffers
 set hidden         " keep buffers open, but hidden, when abandoned
