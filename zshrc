@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="alanpeabody"
 
 # Plugins
-plugins=(git brew osx rvm ruby gem rails zsh-syntax-highlighting)
+plugins=(git brew osx rvm ruby gem zsh-syntax-highlighting)
 
 # Shell opts
 DISABLE_AUTO_TITLE=true
