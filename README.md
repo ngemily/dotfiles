@@ -111,3 +111,10 @@ Key setup (from https://www.digitalocean.com/community/tutorials/how-to-set-up-s
     ssh-keygen -t rsa
     ssh-copy-id user@123.45.56.78
     cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+Keyboard layout
+---------------
+Using xkbmap
+
+    setxkbmap dvorak
+    setxkbmap -option ctrl:nocaps
