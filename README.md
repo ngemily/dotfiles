@@ -40,6 +40,12 @@ Install vundle, then install all plugins.
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
+YouCompleteMe compile and install.  Remember to use a `.ycm_extra_conf.py` for
+semantic completion.
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --clang-completer
+
 For man page, export output of command below to variable VRT. This will setup
 path to vim's less, which will be used for man's pager.
 
@@ -111,3 +117,10 @@ Key setup (from https://www.digitalocean.com/community/tutorials/how-to-set-up-s
     ssh-keygen -t rsa
     ssh-copy-id user@123.45.56.78
     cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+Keyboard layout
+---------------
+Using xkbmap
+
+    setxkbmap dvorak
+    setxkbmap -option ctrl:nocaps

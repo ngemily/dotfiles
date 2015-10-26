@@ -71,6 +71,7 @@ fi
 # Programs
 alias matlab='matlab -nodesktop -nosplash'
 alias jnios='java -jar ~/scripts/jniosemu.jar'
+alias vundle='vim +PluginInstall +qall'
 
 # Utilities
 alias lsusb='system_profiler SPUSBDataType'

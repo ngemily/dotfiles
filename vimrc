@@ -11,11 +11,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
+"Plugin 'tpope/vim-markdown'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -52,9 +53,10 @@ set clipboard+=unnamed " enable yank to system clipboard
 " Display
 set ruler           " show position in file on status line
 set number          " show line numbers
+set cursorline      " highlight the cursorline
+set colorcolumn=+1  " highlight textwidth+1 column
 set background=dark " set background light/dark
 set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
-set cursorline      " highlight the cursorline
 
 " Windows and Buffers
 set hidden         " keep buffers open, but hidden, when abandoned
@@ -70,6 +72,7 @@ set smartcase  " override ignore case if searching upper case
 
 " Tabs and Spaces
 set autoindent    " enter insert mode on new line with same indent level
+set smartindent   " smart indent for code blocks
 set expandtab     " enter tab key presses as spaces
 set shiftwidth=4  " number of spaces for each step of auto-indent
 set softtabstop=4 " number of spaces a tab counts for while editing

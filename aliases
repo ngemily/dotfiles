@@ -17,7 +17,7 @@ alias tarball='tar -cvzf'
 alias untar='tar -xvzf'
 alias deflate='gunzip -rf *'
 
-alias size='du -h'
+alias size='du -sh'
 
 alias r+='chmod +r'
 alias w+='chmod +w'
