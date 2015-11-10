@@ -24,3 +24,4 @@ alias w+='chmod +w'
 alias x+='chmod +x'
 
 alias vvim='vim -O'
+alias lsd='find . -maxdepth 1 -mindepth 1 -type d -printf "%f\n"'
