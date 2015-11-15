@@ -35,3 +35,10 @@ Host legupvm
     Port 2222
     User ngemily
     IdentityFile ~/.ssh/private/legupvm_rsa
+
+Host git.bortolus.si
+    User git
+    Hostname git.bortolus.si
+    IdentityFile ~/.ssh/private/gitlabs
+    TCPKeepAlive yes
+    IdentitiesOnly yes
