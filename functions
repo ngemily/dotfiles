@@ -1,13 +1,4 @@
-man () {
-    if [[ "$#" -lt 1 ]]; then
-        /usr/bin/man $*
-    else
-        /usr/bin/man $* | \
-            col -b | \
-            less -c 'set ft=man nomod nolist' - 
-    fi
-}
-
+# vim: ft=zsh
 mcd() {
     mkdir -p $1;
     cd $1
