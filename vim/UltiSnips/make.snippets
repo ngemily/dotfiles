@@ -1,0 +1,17 @@
+# vim: ft=make
+snippet pandoc
+OBJ=$0report
+SRC=$(OBJ).md
+PDF=$(OBJ).pdf
+TEX=$(OBJ).tex
+
+all:
+	pandoc -o $(PDF) $(SRC)
+
+tex:
+	pandoc --standalone -o $(TEX) $(SRC)
+
+preview:
+	qlmanage -p $(PDF) &> /dev/null
+
+endsnippet
