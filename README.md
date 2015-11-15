@@ -87,6 +87,10 @@ Link tmuxrc
 
     ln -s $PATH_TO_REPO/tmux.conf ~/.tmux.conf
 
+Plugins.  Clone the plugin manager.  Use prefix-I to install new plugins.
+
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 Powerline
 ---------
 
