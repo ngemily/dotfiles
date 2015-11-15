@@ -18,6 +18,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Superbil/llvm.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'bling/vim-bufferline'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -54,6 +58,7 @@ set clipboard+=unnamed " enable yank to system clipboard
 " Display
 set ruler           " show position in file on status line
 set number          " show line numbers
+set relativenumber  " relative to current line number
 set cursorline      " highlight the cursorline
 set colorcolumn=+1  " highlight textwidth+1 column
 set background=dark " set background light/dark
@@ -143,7 +148,7 @@ vnoremap Q gq
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " [ Insert mode ]
-imap <C-j> <Plug>IMAP_JumpForward
+"imap <C-j> <Plug>IMAP_JumpForward
 "imap <C-i> <Plug>Tex_InsertItemOnThisLine
 "imap <C-b> <Plug>Tex_MathBF
 "imap <C-c> <Plug>Tex_MathCal
@@ -220,3 +225,6 @@ command! Bg call ToggleBackground()
 " --------
 command! NoComment :%s/\v\/\*.+\*\///
 command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
+
+" Plugin Settings
+let g:UltiSnipsExpandTrigger = '<c-k>'
