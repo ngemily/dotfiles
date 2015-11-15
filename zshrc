@@ -75,6 +75,7 @@ alias vundle='vim +PluginInstall +qall'
 
 # Utilities
 alias lsusb='system_profiler SPUSBDataType'
+unalias lsusb
 
 # Projects and directories
 alias me='ftp ngemily2@individual.utoronto.ca'

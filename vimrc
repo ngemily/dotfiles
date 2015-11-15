@@ -17,6 +17,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Superbil/llvm.vim'
 
 call vundle#end()
 
