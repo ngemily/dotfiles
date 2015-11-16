@@ -21,17 +21,9 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
-
-" Powerline setup
-try
-    python from powerline.vim import setup as powerline_setup
-    python powerline_setup()
-    python del powerline_setup
-    let g:Powerline_symbols = 'unicode'
-catch
-endtry
 
 " Global variables
 let mapleader = ' '
@@ -225,5 +217,22 @@ command! Bg call ToggleBackground()
 command! NoComment :%s/\v\/\*.+\*\///
 command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
 
+" ---------------
 " Plugin Settings
+" ---------------
+
+" UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-k>'
+
+" Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_theme = 'powerlineish'
