@@ -42,3 +42,9 @@ Host git.bortolus.si
     IdentityFile ~/.ssh/private/gitlabs
     TCPKeepAlive yes
     IdentitiesOnly yes
+
+Host common_room
+    User ngemily2
+    Hostname p187.ecf.utoronto.ca
+    IdentityFile ~/.ssh/private/p187
+    TCPKeepAlive yes
