@@ -48,3 +48,8 @@ Host common_room
     Hostname p187.ecf.utoronto.ca
     IdentityFile ~/.ssh/private/p187
     TCPKeepAlive yes
+
+Host droplet
+    User ngemily
+    Hostname 159.203.0.76
+    IdentityFile ~/.ssh/private/droplet
