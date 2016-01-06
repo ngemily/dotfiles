@@ -165,6 +165,7 @@ augroup syntax
   autocmd BufNewFile,BufRead *.io set filetype=io
   autocmd BufNewFile,BufRead *.cls set filetype=tex
   autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.sv set filetype=verilog
 augroup END
 " Whitespace management
 augroup whitespace
