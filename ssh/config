@@ -53,3 +53,6 @@ Host droplet
     User ngemily
     Hostname 159.203.0.76
     IdentityFile ~/.ssh/private/droplet
+
+Host *
+    StrictHostKeyChecking no
