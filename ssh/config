@@ -33,7 +33,7 @@ Host heroku.com
 Host legupvm
     Hostname localhost
     Port 2222
-    User ngemily
+    User legup
     IdentityFile ~/.ssh/private/legupvm_rsa
 
 Host git.bortolus.si
@@ -53,4 +53,11 @@ Host droplet
     User ngemily
     Hostname 159.203.0.76
     IdentityFile ~/.ssh/private/droplet
+    ServerAliveInterval 240
+
+Host shire
+    User ngemily
+    Hostname localhost
+    Port 2223
+    IdentityFile ~/.ssh/private/centos
     ServerAliveInterval 240
