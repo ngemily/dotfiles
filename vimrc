@@ -5,23 +5,32 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle
 Plugin 'gmarik/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-markdown'
-Plugin 'nelstrom/vim-markdown-folding'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'SirVer/ultisnips'
+
+" UI - panel appearance and navigation
+Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+
+" Editing - text editing
+Plugin 'sjl/gundo.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'kien/rainbow_parentheses.vim'
+
+" Syntax - highlight, completion, and checking
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'nelstrom/vim-markdown-folding'
+
+" Git integration
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -233,9 +242,6 @@ command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
 " Plugin Settings
 " ---------------
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger = '<c-k>'
-
 " Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -248,6 +254,12 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 let g:airline_theme = 'powerlineish'
+
+" Tagbar
+let g:tagbar_left = 1
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<c-k>'
 
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
