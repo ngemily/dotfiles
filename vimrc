@@ -250,6 +250,8 @@ let g:airline_symbols.linenr = '⭡'
 let g:airline_theme = 'powerlineish'
 
 " YouCompleteMe
-let g:ycm_warning_symbol = '>'
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<c-l>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_warning_symbol = '>'
