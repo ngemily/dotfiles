@@ -165,6 +165,7 @@ augroup syntax
   autocmd BufNewFile,BufRead *.io set filetype=io
   autocmd BufNewFile,BufRead *.cls set filetype=tex
   autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.sv set filetype=verilog
 augroup END
 " Whitespace management
 augroup whitespace
@@ -172,6 +173,11 @@ augroup whitespace
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab tw=0
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab tw=0
+augroup END
+augroup prose
+    autocmd!
+    autocmd FileType markdown set background=light
+    autocmd FileType markdown set nonumber norelativenumber
 augroup END
 " Comment group
 augroup comment_line
@@ -211,6 +217,12 @@ function! ToggleBackground()
 endfunction
 command! Bg call ToggleBackground()
 
+function! Tidy()
+    %s/\s\+$//
+    write
+endfunction
+command! Tidy call Tidy()
+nnoremap <F5> :call Tidy()<CR>
 " --------
 " Commands
 " --------
