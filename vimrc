@@ -226,12 +226,34 @@ function! ToggleBackground()
 endfunction
 command! Bg call ToggleBackground()
 
+" Clean whitespace
 function! Tidy()
     %s/\s\+$//
     write
 endfunction
 command! Tidy call Tidy()
 nnoremap <F5> :call Tidy()<CR>
+
+" Set ignore pattern for diff
+function! IgnoreDiff(pattern)
+    let opt = ""
+    "if exists("g:diffignore") && g:diffignore != ""
+    if a:pattern != ""
+        let opt = "-I " . a:pattern . " "
+    endif
+    if &diffopt =~ "icase"
+        let opt = opt . "-i "
+    endif
+    if &diffopt =~ "iwhite"
+        let opt = opt . "-b "
+    endif
+    silent execute "!diff -a --binary " . opt . v:fname_in . " " . v:fname_new .
+                \  " > " . v:fname_out
+endfunction
+
+command! IgnoreCommentDiff set diffexpr=IgnoreDiff('//') | diffupdate
+command! ResetDiff set diffexpr= | diffupdate
+
 " --------
 " Commands
 " --------
