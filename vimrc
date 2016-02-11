@@ -289,3 +289,4 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 let g:ycm_key_invoke_completion = '<c-l>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_warning_symbol = '>'
+let g:ycm_always_populate_location_list = 1
