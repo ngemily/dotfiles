@@ -35,7 +35,7 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " Global variables
-let mapleader = ' '
+let mapleader = '\'
 let maplocalleader = '`'
 let $MANPAGER=''
 let tex_flavor='latex'
@@ -101,6 +101,7 @@ set foldnestmax=10
 set cpo+=J " for two space at end of sentence
 set showmatch " show matching brace when inserted
 set noshowmode " put a message stating editing mode
+set noesckeys
 
 " --------------
 "  Key Mappings
