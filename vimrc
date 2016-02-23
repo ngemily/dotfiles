@@ -110,9 +110,6 @@ set noesckeys
 nnoremap <leader>C :%s///gn<cr>
 " Search highlighted word
 vnoremap ? y:let @/=@"<CR>:%s///gn<cr>
-" Escape insert mode
-inoremap jk <ESC>
-vnoremap kl <ESC>
 " Movement
 nnoremap H 0w
 vnoremap H 0w
