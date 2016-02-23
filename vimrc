@@ -68,6 +68,7 @@ set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
 set hidden         " keep buffers open, but hidden, when abandoned
 set winminheight=0 " minimum window height
 set laststatus=2   " status-line display mode [0-2]
+set mouse=a        " turn on mouse mode
 
 " Pattern Matching
 set magic      " use magic matching
