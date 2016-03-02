@@ -15,9 +15,8 @@ setopt NO_BEEP
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 
 if [ TERM="xterm" ]; then
-  export TERM='screen-256color-bce'
+    export TERM='screen-256color'
 fi
-export TERM=xterm
 
 # Quick edit zshrc
 source $ZSH/oh-my-zsh.sh
