@@ -33,12 +33,6 @@ Host heroku.com
     TCPKeepAlive yes
     User ngemily
 
-Host legupvm
-    Hostname localhost
-    Port 2222
-    User legup
-    IdentityFile ~/.ssh/private/legupvm_rsa
-
 Host git.bortolus.si
     User git
     Hostname git.bortolus.si
@@ -60,6 +54,13 @@ Host droplet
 
 Host shire
     User ngemily
-    Hostname 192.168.121.172
+    Hostname localhost
+    Port 2221
     IdentityFile ~/.ssh/private/centos
     ServerAliveInterval 240
+
+Host mirkwood
+    User ngemily
+    Hostname localhost
+    Port 2222
+    IdentityFile ~/.ssh/private/ubuntu
