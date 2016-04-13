@@ -282,6 +282,14 @@ let g:airline_theme = 'powerlineish'
 
 " Tagbar
 let g:tagbar_left = 1
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-k>'
