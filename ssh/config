@@ -20,19 +20,6 @@ Host ug
     IdentityFile ~/.ssh/private/ug_rsa
     TCPKeepAlive yes
 
-Host bitbucket
-    HostName bitbucket.org
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/private/bitbucket
-    TCPKeepAlive yes
-
-Host heroku.com
-    Hostname heroku.com
-    IdentitiesOnly yes
-    IdentityFile ~/.ssh/private/heroku
-    TCPKeepAlive yes
-    User ngemily
-
 Host git.bortolus.si
     User git
     Hostname git.bortolus.si
@@ -50,13 +37,6 @@ Host droplet
     User ngemily
     Hostname 159.203.0.76
     IdentityFile ~/.ssh/private/droplet
-    ServerAliveInterval 240
-
-Host shire
-    User ngemily
-    Hostname localhost
-    Port 2221
-    IdentityFile ~/.ssh/private/centos
     ServerAliveInterval 240
 
 Host mirkwood
