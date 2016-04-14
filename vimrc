@@ -23,8 +23,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jiangmiao/auto-pairs'
 
 " Syntax - highlight, completion, and checking
 Plugin 'Valloric/YouCompleteMe'
@@ -32,7 +34,8 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'nelstrom/vim-markdown-folding'
 
-" Git integration
+" Integrated environment
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
