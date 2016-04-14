@@ -20,6 +20,8 @@ Plugin 'kien/ctrlp.vim'
 " Editing - text editing
 Plugin 'sjl/gundo.vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/rainbow_parentheses.vim'
