@@ -44,3 +44,16 @@ Host mirkwood
     Hostname localhost
     Port 2222
     IdentityFile ~/.ssh/private/ubuntu
+
+Host aws
+    User ngemily
+    Hostname ngemily.me
+    IdentityFile ~/.ssh/private/aws_rsa
+    ServerAliveInterval 240
+
+Host git.ngemily.me
+    User git
+    Hostname git.ngemily.me
+    IdentityFile ~/.ssh/private/gitlabs
+    TCPKeepAlive yes
+    IdentitiesOnly yes
