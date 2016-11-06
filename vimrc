@@ -110,6 +110,7 @@ set cpo+=J " for two space at end of sentence
 set showmatch " show matching brace when inserted
 set noshowmode " put a message stating editing mode
 set noesckeys
+set scrolloff=3
 
 " --------------
 "  Key Mappings
