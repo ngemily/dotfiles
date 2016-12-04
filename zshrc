@@ -56,13 +56,6 @@ if [ ! -z $VRT ] ; then
 fi
 alias ql='quick-look'
 
-# Use mvim if installed
-which mvim &> /dev/null
-if [ $? -eq 0 ]; then
-    alias vim='mvim -v'
-    alias vimdiff='mvimdiff -v'
-fi
-
 # Functions
 if [ -e ~/.functions ]; then
   source ~/.functions
