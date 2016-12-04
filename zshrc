@@ -60,6 +60,9 @@ alias ql='quick-look'
 if [ -e ~/.functions ]; then
   source ~/.functions
 fi
+if [ -e ~/.local_functions ]; then
+  source ~/.local_functions
+fi
 
 # Programs
 alias matlab='matlab -nodesktop -nosplash'
