@@ -30,6 +30,7 @@ Plugin 'jiangmiao/auto-pairs'
 
 " Syntax - highlight, completion, and checking
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'nelstrom/vim-markdown-folding'
@@ -59,7 +60,7 @@ colorscheme solarized
 " Terminal settings
 set encoding=utf-8     " character encoding
 set t_Co=256           " number of terminal colors
-set clipboard+=unnamed " enable yank to system clipboard
+" set clipboard+=unnamed " enable yank to system clipboard
 
 " Display
 set ruler           " show position in file on status line
@@ -67,8 +68,8 @@ set number          " show line numbers
 set relativenumber  " relative to current line number
 set cursorline      " highlight the cursorline
 set colorcolumn=+1  " highlight textwidth+1 column
-set background=dark " set background light/dark
 set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+source ~/.vim_bg
 
 " Windows and Buffers
 set hidden         " keep buffers open, but hidden, when abandoned
@@ -94,10 +95,10 @@ set textwidth=80  " maximum line length
 
 " Undo files
 if exists ("&undofile")
-  set undofile
+    set undofile
 endif
 if exists ("&undodir")
-  set undodir=$HOME/.vimundo//
+    set undodir=$HOME/.vimundo//
 endif
 
 " Folding
@@ -176,21 +177,21 @@ vnorem // y/<c-r>"<cr>
 " --------------
 " Syntax group
 augroup syntax
-  autocmd!
-  autocmd BufNewFile,BufRead *.io set filetype=io
-  autocmd BufNewFile,BufRead *.cls set filetype=tex
-  autocmd BufNewFile,BufRead *.md set filetype=markdown
-  autocmd BufNewFile,BufRead *.sv set filetype=verilog
-  autocmd BufNewFile,BufRead *.vh set filetype=verilog
-  autocmd BufNewFile,BufRead *.vo set filetype=verilog
-  autocmd BufNewFile,BufRead *.xxd set filetype=xxd
+    autocmd!
+    autocmd BufNewFile,BufRead *.io set filetype=io
+    autocmd BufNewFile,BufRead *.cls set filetype=tex
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
+    autocmd BufNewFile,BufRead *.sv set filetype=verilog
+    autocmd BufNewFile,BufRead *.vh set filetype=verilog
+    autocmd BufNewFile,BufRead *.vo set filetype=verilog
+    autocmd BufNewFile,BufRead *.xxd set filetype=xxd
 augroup END
 " Whitespace management
 augroup whitespace
-  autocmd!
-  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab tw=0
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab tw=0
+    autocmd!
+    autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab tw=0
+    autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab tw=0
 augroup END
 augroup prose
     autocmd!
@@ -199,41 +200,31 @@ augroup prose
 augroup END
 " Comment group
 augroup comment_line
-  autocmd!
-  autocmd FileType lua nnoremap <buffer> <localleader>c I--<ESC>
-  autocmd FileType c nnoremap <buffer> <localleader>c I//<ESC>
-  autocmd FileType lua nnoremap <buffer> <localleader>C 0wxx
+    autocmd!
+    autocmd FileType lua nnoremap <buffer> <localleader>c I--<ESC>
+    autocmd FileType c nnoremap <buffer> <localleader>c I//<ESC>
+    autocmd FileType lua nnoremap <buffer> <localleader>C 0wxx
 augroup END
 " Completion group
 augroup completion
-  autocmd FileType python setl omnifunc=pythoncomplete#Complete
-  autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
-  autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
-  autocmd FileType c setl omnifunc=ccomplete#Complete
-  autocmd FileType ruby setl omnifunc=rubycomplete#Complete
+    autocmd!
+    autocmd FileType python setl omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+    autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c setl omnifunc=ccomplete#Complete
+    autocmd FileType ruby setl omnifunc=rubycomplete#Complete
 augroup END
 " Autocomplete, lang spec.
 augroup abbrev
-  autocmd!
-  autocmd FileType lua :iabbrev <buffer> func function ( ) end
-  autocmd FileType lua :iabbrev <buffer> iff if then end
-  autocmd FileType lua :iabbrev <buffer> fori for i in ipairs () do end
-  autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end
+    autocmd!
+    autocmd FileType lua :iabbrev <buffer> func function ( ) end
+    autocmd FileType lua :iabbrev <buffer> iff if then end
+    autocmd FileType lua :iabbrev <buffer> fori for i in ipairs () do end
+    autocmd FileType lua :iabbrev <buffer> fork for k, v in pairs () do end
 augroup END
-
-" ---------
-" Functions
-function! ToggleBackground()
-  if (&background == "light")
-    set background=dark
-  else
-    set background=light
-  endif
-endfunction
-command! Bg call ToggleBackground()
 
 " Clean whitespace
 function! Tidy()
@@ -275,7 +266,7 @@ command! TabWord :'<,'>Tabularize /\v^\s+\w+\s\zs
 
 " Airline
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
@@ -284,18 +275,18 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'solarized'
 
 " Tagbar
 let g:tagbar_left = 1
 let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-\ }
+            \ 'ctagstype' : 'markdown',
+            \ 'kinds' : [
+            \ 'h:Heading_L1',
+            \ 'i:Heading_L2',
+            \ 'k:Heading_L3'
+            \ ]
+            \ }
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-k>'
@@ -307,3 +298,9 @@ let g:ycm_key_invoke_completion = '<c-l>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_warning_symbol = '>'
 let g:ycm_always_populate_location_list = 1
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
