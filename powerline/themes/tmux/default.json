@@ -1,11 +1,5 @@
 {
 	"segments": {
-        "left": [
-			{
-				"function": "powerline.segments.common.bat.battery",
-				"priority": 50
-			}
-        ],
 		"right": [
 			{
 				"function": "powerline.segments.common.sys.uptime",
@@ -29,6 +23,10 @@
 			},
 			{
 				"function": "powerline.segments.common.net.hostname"
+			},
+			{
+				"function": "powerline.segments.common.bat.battery",
+				"priority": 50
 			}
 		]
 	}
