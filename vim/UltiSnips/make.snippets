@@ -15,3 +15,15 @@ preview:
 	qlmanage -p $(PDF) &> /dev/null
 
 endsnippet
+
+snippet cpp
+CC=clang++
+CFLAGS=-std=c++11 -O3
+
+all:
+	$(CC) $(CFLAGS) -o main main.cpp
+
+clean:
+	rm -rf main
+
+endsnippet
