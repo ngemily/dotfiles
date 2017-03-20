@@ -22,3 +22,5 @@
     pager = less -F -X
 [credential]
     helper = osxkeychain
+[branch]
+	autosetuprebase = always
