@@ -1,63 +1,58 @@
-" {{{ Plugin
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle
-Plugin 'gmarik/Vundle.vim'
-
+" {{{ Plugins
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
 " UI - panel appearance and navigation
-Plugin 'vim-airline/vim-airline-themes' " look prettier
-Plugin 'bling/vim-airline'      " look pretty. be functional
-Plugin 'airblade/vim-gitgutter' " git gutter
-Plugin 'majutsushi/tagbar'      " ctags navigation
-Plugin 'kien/ctrlp.vim'         " directory globbing
-Plugin 'tpope/vim-vinegar'      " better netrw
-Plugin 'mtth/scratch.vim'       " easy scratch windows
+Plug 'vim-airline/vim-airline-themes' " look prettier
+Plug 'vim-airline/vim-airline'        " look pretty. be functional
+Plug 'majutsushi/tagbar'              " ctags navigation
+Plug 'airblade/vim-gitgutter'         " git gutter
+Plug 'junegunn/fzf'                   " directory globbing
+Plug 'junegunn/fzf.vim'               " directory globbing
+Plug 'tpope/vim-vinegar'              " better netrw
+Plug 'mhinz/vim-startify'             " sick startup screen
+Plug 'ryanoasis/vim-devicons'         " pretty icons
+Plug 'ngemily/vim-colors-solarized'
+Plug 'junegunn/goyo.vim'
 
 " Editing - text editing
-if has('python3')
-    let g:gundo_prefer_python3 = 1
-endif
-Plugin 'sjl/gundo.vim'          " navigate undo tree
-if has('python') || has('python3')
-    Plugin 'SirVer/ultisnips'   " snippets
-endif
-Plugin 'tpope/vim-commentary'   " toggle comment
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'     " easy surround
-Plugin 'tpope/vim-endwise'      " syntactic construct endings
-Plugin 'tpope/vim-unimpaired'   " sick mappings
-Plugin 'godlygeek/tabular'      " line things up vertically
-Plugin 'bogado/file-line'       " open file.cpp:101 the way you would expect
+Plug 'bogado/file-line'          " open file.cpp:101 the way you would expect
+Plug 'tmhedberg/matchit'         " better <({[]})> support
+Plug 'chaoren/vim-wordmotion'    " motions_within_words
+Plug 'godlygeek/tabular'         " line things up vertically
+Plug 'sjl/gundo.vim'             " navigate undo tree
+Plug 'tpope/vim-commentary'      " toggle comment
+Plug 'tpope/vim-repeat'          " smarter repeat
+Plug 'tpope/vim-surround'        " easy surround
+Plug 'tpope/vim-endwise'         " language aware complete 'end' after 'if'
+Plug 'tpope/vim-unimpaired'      " sick mappings
+Plug 'ngemily/vim-grep-operator' " list matches in the location list
 
 " Syntax - highlight, completion, and checking
-if has('python3')
-    Plugin 'Valloric/YouCompleteMe'
-endif
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'nelstrom/vim-markdown-folding'
-Plugin 'scrooloose/syntastic'
-Plugin 'ehamberg/vim-cute-python'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+Plug 'justinmk/vim-syntax-extra'
+
+" Language specific
+Plug 'ehamberg/vim-cute-python',     {'for' : 'python'}
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for' : 'markdown'}
+Plug 'plasticboy/vim-markdown',      {'for' : 'markdown'}
 
 " Integrated environment
-Plugin 'tpope/vim-dispatch'     " better :make integration
-Plugin 'tpope/vim-fugitive'     " git integration
+Plug 'tpope/vim-dispatch'     " better :make integration
+Plug 'tpope/vim-fugitive'     " git integration
 
-" Vim development
-Plugin 'kana/vim-vspec'         " VimScript unit testing
-
-call vundle#end()
+call plug#end()
 " }}}
 
-" Global variables
-let mapleader = '\'
+" {{{ Set
+" Leaders
+let mapleader = ' '
 let maplocalleader = '`'
+
+" Pagers
 let $MANPAGER=''
+let $PAGER=''
 let tex_flavor='latex'
 
 " Filetype options
@@ -68,15 +63,23 @@ filetype indent on
 syntax on
 
 " Colors
-" let g:solarized_hitrail = 1
 colorscheme solarized
+set background=light
+let g:solarized_hitrail = 1
 set t_Co=256           " number of terminal colors
-highlight CursorLineNr ctermbg=7
 
-" {{{ Set
+" Italic comments
+set t_ZH=[3m
+set t_ZR=[23m
+highlight Comment cterm=italic
+
 " Terminal settings
 set encoding=utf-8     " character encoding
 set clipboard+=unnamed " enable yank to system clipboard
+
+" Auto completion in command mode
+set wildmenu
+set wildmode=full
 
 " Display
 set ruler           " show position in file on status line
@@ -84,14 +87,15 @@ set number          " show line numbers
 set relativenumber  " relative to current line number
 set cursorline      " highlight the cursorline
 set colorcolumn=+1  " highlight textwidth+1 column
-set listchars=eol:$,tab:▸\ ,trail:~,extends:>,precedes:<
+set signcolumn=number " display signs in the number column
+set listchars=eol:$,tab:\ ,trail:~,extends:>,precedes:<
 set nowrap          " don't wrap long lines
-source ~/.vim_bg
 
 " Windows and Buffers
 set hidden         " keep buffers open, but hidden, when abandoned
 set winminheight=0 " minimum window height
 set laststatus=2   " status-line display mode [0-2]
+set mouse=""       " turn off mouse mode
 
 " Pattern Matching
 set magic      " use magic matching
@@ -115,12 +119,8 @@ set printoptions+=number:y,paper:letter,left:0.25in,right:0.5,top:1in,bottom:1in
 set printfont=courier:h9
 
 " Undo files
-if exists ("&undofile")
-    set undofile
-endif
-if exists ("&undodir")
-    set undodir=$HOME/.vimundo//
-endif
+set undofile
+set undodir=$HOME/.vimundo
 
 " Folding
 set foldmethod=indent
@@ -136,11 +136,7 @@ set scrolloff=3
 " }}}
 
 " {{{ Key Mappings
-" {{{ hjkl related movements
-nnoremap H 0w
-vnoremap H 0w
-nnoremap L $
-vnoremap L $
+" {{{ Windows and panes
 " Pane sizing
 nnoremap <leader>L <C-w>5>
 nnoremap <leader>H <C-w>5<
@@ -154,16 +150,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 " }}}
 
-" {{{ Bookmarks - for convenient editing of frequent files
-" Quick editing vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-" }}}
-
 " {{{ Editing - modifies text
-" Formatting lines
-nnoremap Q gqip
-vnoremap Q gq
 " To upper case
 inoremap <leader><C-u> <esc>viwUea
 nnoremap <leader>u viwUe
@@ -201,12 +188,13 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 " }}}
 
-" Change to directory of current file.
-"nnoremap <leader>C :cd %:p:h<CR>:pwd<cr>
-
+" {{{ Command mode
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
+" }}}
 " }}}
 
-" {{{ Auto commands
+" {{{ Filetype settings
 " {{{ Filetype group
 augroup syntax
   autocmd!
@@ -277,13 +265,6 @@ command! ResetDiff set diffexpr= | diffupdate
 
 " {{{ Plugin Settings
 
-" {{{ Netrw
-let g:netrw_altv=1              " v opens in new vertical split on the right
-let g:netrw_liststyle=3
-let g:netrw_banner=0            " suppress banner
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-" }}}
-
 " {{{ Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -300,74 +281,144 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " }}}
 
-" {{{ Signify
-let g:signify_vcs_list = [ 'perforce', 'git' ]
-let g:signify_sign_add               = '+'
-let g:signify_sign_delete            = '-'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '~'
-let g:signify_sign_changedelete      = g:signify_sign_change
+" {{{ ALE
+let g:ale_echo_msg_format = '[%linter%] %s'
+
+" Airline
+let g:airline#extensions#ale#error_symbol='✘ '
+let g:airline#extensions#ale#warning_symbol='⚠ '
+" }}}
+"
+" {{{ CoC
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use `[d` and `]d` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+nnoremap <silent> cD :call <SID>show_documentation()<CR>
+
+augroup coc
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json,cpp setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup END
+
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Format whole file
+command! -nargs=0 Format :call CocAction('format')
+
+set shortmess+=aFc
+" Augmenting Ag command using fzf#vim#with_preview function
+"   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
+"     * For syntax-highlighting, Ruby and any of the following tools are required:
+"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+"       - CodeRay: http://coderay.rubychan.de/
+"       - Rouge: https://github.com/jneen/rouge
+"
+"   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+"   :Ag! - Start fzf in fullscreen and display the preview window above
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag_raw(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
 " }}}
 
-" {{{ YouCompleteMe
-" Map useful commands
-" y=ycm, g=go, x=thing
-map yG :YcmCompleter GoTo<CR>
-map ygi :YcmCompleter GoToInclude<CR>
-" y=ycm, o=obtain, x=thing
-map yod :YcmCompleter GetDoc<CR>
-map yop :YcmCompleter GetParent<CR>
-map yot :YcmCompleter GetType<CR>
-
-" colours
-highlight link YcmErrorSign CursorLineNr
-
-" Point to the configuration file.  Alternatively, always copy this file to your
-" source code directory to avoid using a global file.
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf=0
-
-" Show gutter symbols at erroneous lines.
-let g:ycm_show_diagnostics_ui = 1
-
-" For debug.  If you are running into an errors, or there are no completions
-" available, set these and run :YcmDebugInfo.  This will write some logs and
-" show you where they are.
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_server_use_vim_stdout = 0
-
-let g:ycm_register_as_syntastic_checker = 0
+" {{{ Commentary plugin comment string
+augroup commentary
+    autocmd!
+    autocmd FileType dot,c,cpp,cs,java setlocal commentstring=//\ %s
+    autocmd FileType verilog,verilog_systemverilog setlocal commentstring=//\ %s
+    autocmd FileType gdb,awk,csv,sdc,cmake setlocal commentstring=\#\ %s
+augroup END
 " }}}
 
-" {{{ UltiSnips
-let g:UltiSnipsExpandTrigger = '<c-t>'
-let g:UltiSnipsJumpForwardTrigger = '<c-t>' " can't use <c-n>, conflicts with ycm
-let g:UltiSnipsJumpBackwardTrigger = '<c-p>'
+" {{{ FZF
+let g:fzf_command_prefix = 'Fzf'
+
+" act like ctrl-p in sublime text
+nnoremap <c-p> :FZF<CR>
+
+nnoremap <c-b> :FzfBuffers<CR>
+nnoremap <c-f> :FzfBLines<CR>
+" nnoremap <c-m> :FzfMarks<CR>
+
+" Like <c-f>, which goes opens the command-line window, use a command mode map
+" to enable fuzzy finding through the command history.
+cnoremap <silent> <c-t> FzfHistory:<CR>
+" Unclear how to make a search mode map, use normal mode map instead.
+" Unfortunately, this is not consistent with the map for FzfHistory:
+" <c-/> is also not possible, as only ASCII printable characters may be mapped.
+nnoremap <c-s> :FzfHistory/<cr>
 " }}}
 
-" {{{ Syntastic
-" Plugin settings
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["cpp"] 
-    \ }
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_aggregate_errors = 1
-
-highlight link SyntasticErrorSign CursorLineNr
-highlight link SyntasticWarningSign CursorLineNr
-
-" Python
-let g:syntastic_python_checkers = ['python']
-
-" Perl settings
-let g:syntastic_enable_perl_checkers = 1
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl']
+" {{{ Gundo
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 " }}}
 
+" {{{ Startify
+nnoremap tos :Startify<CR>
+
+" startify mappings, do not use these letters for bookmarks!
+"   q - quit
+"   e - empty buffer
+"   i - empty buffer in insert mode
+"   [bsvt] - marks for {same, split, vsplit, tab}
+
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+
+let g:startify_list_order = [
+        \ ['Sessions'], 'sessions',
+        \ ['MRU'], 'files',
+        \ ['MRU Directory'], 'dir',
+        \ ['Bookmarks'], 'bookmarks',
+        \ ['Commands'], 'commands',
+        \ ]
+
+" bookmarks, list of {'<key>' : 'path'} dicts
+let g:startify_files_number = 20
+let g:startify_bookmarks = [
+        \ { 'C': '$HOME/.vimrc'},
+        \ ]
+
+let g:startify_fortune_use_unicode = 1
+let g:startify_disable_at_vimenter = 0
+" }}}
+"
 " {{{ Tagbar
 nnoremap cot :TagbarToggle<CR>
 
@@ -386,32 +437,8 @@ let g:tagbar_type_markdown = {
 
 " }}}
 
-" {{{ vp4
-let g:vp4_perforce_executable = 'p4'
-let g:vp4_allow_open_depot_file=1
-" }}}
-
-" {{{ Ctrl-P
-let g:ctrlp_max_files = 1000
-let g:ctrlp_regexp = 1
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-" }}}
-
-" Gundo
-nnoremap cog :GundoToggle<CR><C-c>
-
-" Fugitive
-"nnoremap <leader>G :Gstatus<CR>
-"nnoremap <leader>D :Gdiff<CR>
-
-" {{{ Commentary plugin comment string
-augroup commentary
-    autocmd!
-    autocmd FileType dot,c,cpp,cs,java setlocal commentstring=//\ %s
-    autocmd FileType verilog,verilog_systemverilog setlocal commentstring=//\ %s
-    autocmd FileType gdb,awk,csv,sdc,cmake setlocal commentstring=\#\ %s
-augroup END
+" {{{ Word motion
+let g:wordmotion_prefix = '<Space>'
 " }}}
 
 " }}}
