@@ -278,7 +278,7 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 
 " Airline
 let g:airline#extensions#ale#error_symbol='✘ '
-let g:airline#extensions#ale#warning_symbol='⚠ '
+let g:airline#extensions#ale#warning_symbol=' '
 " }}}
 "
 " {{{ CoC
