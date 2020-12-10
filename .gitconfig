@@ -1,14 +1,9 @@
 [user]
     name = Emily Ng
     email = ngemily2@gmail.com
-[http]
-    postBuffer = 524288000
 [alias]
-    logg = log --graph --max-count=20
     lol = log --graph --max-count=20 --pretty=oneline --abbrev-commit
     dc = diff --cached
-    ribbon="tag --force _ribbon remotes/origin/master"
-    catchup="log --patch --reverse --topo-order _ribbon..remotes/origin/master"
 [color]
     branch = auto
     diff = auto
@@ -20,7 +15,5 @@
     excludesfile = ~/.gitignore
     editor = vim
     pager = less -F -X
-[credential]
-    helper = osxkeychain
 [branch]
 	autosetuprebase = always
