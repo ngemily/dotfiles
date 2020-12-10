@@ -15,7 +15,6 @@ alias uuuu='cd ../../../..'
 
 alias tarball='tar -cvzf'
 alias untar='tar -xvzf'
-alias deflate='gunzip -rf *'
 
 alias size='du -sh'
 
@@ -24,5 +23,5 @@ alias w+='chmod +w'
 alias x+='chmod +x'
 
 alias v='vim'
-alias vvim='vim -O'
+alias vv='vim -O'
 alias lsd='find . -maxdepth 1 -mindepth 1 -type d'

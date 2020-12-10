@@ -1,5 +1,5 @@
 # vim: ft=zsh
-mcd() {
+export mcd() {
     mkdir -p $1;
     cd $1
 }
