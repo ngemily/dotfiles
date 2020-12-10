@@ -2,6 +2,9 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 
+# manpager
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
 # fzf
 export FZF_DEFAULT_OPTS="--no-bold --color=light,pointer:4,fg+:0,hl:3,info:10,bg+:3,hl+:8,marker:0,pointer:0,prompt:12"
 export FZF_CTRL_T_OPTS="
