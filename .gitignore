@@ -1,3 +1,5 @@
-vim/doc/tags
-vim/.netrwhist
-vim/bundle/**
+# Global
+.*.swp
+
+# Python
+*.pyc
