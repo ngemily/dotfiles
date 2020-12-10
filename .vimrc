@@ -13,6 +13,7 @@ Plug 'tpope/vim-vinegar'              " better netrw
 Plug 'mhinz/vim-startify'             " sick startup screen
 Plug 'ryanoasis/vim-devicons'         " pretty icons
 Plug 'ngemily/vim-colors-solarized'
+Plug 'sonph/onehalf', {'rtp': 'vim/'} " colorscheme
 Plug 'junegunn/goyo.vim'
 
 " Editing - text editing
@@ -63,15 +64,15 @@ filetype indent on
 syntax on
 
 " Colors
-colorscheme solarized
+colorscheme onehalflight
 set background=light
-let g:solarized_hitrail = 1
 set t_Co=256           " number of terminal colors
 
 " Italic comments
-set t_ZH=[3m
-set t_ZR=[23m
-highlight Comment cterm=italic
+" doesn't work on windows terminal
+" set t_ZH=[3m
+" set t_ZR=[23m
+" highlight Comment cterm=italic
 
 " Terminal settings
 set encoding=utf-8     " character encoding
@@ -266,17 +267,8 @@ command! ResetDiff set diffexpr= | diffupdate
 " {{{ Plugin Settings
 
 " {{{ Airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
-let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'onehalflight'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " }}}
@@ -413,6 +405,7 @@ let g:startify_list_order = [
 let g:startify_files_number = 20
 let g:startify_bookmarks = [
         \ { 'C': '$HOME/.vimrc'},
+        \ { 'W': '/mnt/c/Users/ngemi/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json'},
         \ ]
 
 let g:startify_fortune_use_unicode = 1
