@@ -2,6 +2,10 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 
+# ruby
+export GEM_HOME="$HOME/.gem/ruby/2.7.0/bin"
+export PATH="$GEM_HOME:$PATH"
+
 # manpager
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
