@@ -3,6 +3,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 
 # ruby
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export GEM_HOME="$HOME/.gem/ruby/2.7.0/bin"
 export PATH="$GEM_HOME:$PATH"
 
