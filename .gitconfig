@@ -2,7 +2,7 @@
     name = Emily Ng
     email = ngemily2@gmail.com
 [alias]
-    lol = log --graph --max-count=20 --pretty=oneline --abbrev-commit
+    lol = log --graph --max-count=20 --pretty=format:'%C(yellow)%h %C(13)%an %C(cyan)%ad %Creset%s' --date=relative
     dc = diff --cached
 [color]
     branch = auto
@@ -17,3 +17,5 @@
     pager = less -F -X
 [branch]
 	autosetuprebase = always
+[init]
+	defaultBranch = main
